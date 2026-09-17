@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Briefcase, 
-  Menu, 
-  X, 
-  Phone, 
-  Calendar, 
-  CheckCircle2, 
-  Sparkles,
-  ArrowRight,
+import {
+  Briefcase,
+  Menu,
+  X,
+  Phone,
+  Calendar,
+  CheckCircle2,
   MessageSquare
 } from 'lucide-react';
 import { ADRIANO_PROFILE } from '../data/content';
 
 interface HeaderProps {
-  onOpenAiAdvisor: () => void;
   onOpenContact: (prefilledService?: string) => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenAiAdvisor, onOpenContact }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -125,16 +122,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAiAdvisor, onOpenContact }
 
           {/* Direct CTAs */}
           <div className="hidden sm:flex items-center gap-3">
-            {/* AI Advisor prompt trigger */}
-            <button
-              onClick={onOpenAiAdvisor}
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-all cursor-pointer shadow-xs"
-              title="Obtén un diagnóstico preliminar con inteligencia artificial"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Diagnóstico IA</span>
-            </button>
-
             {/* Primary CTA */}
             <button
               onClick={() => onOpenContact()}
@@ -171,17 +158,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAiAdvisor, onOpenContact }
             </div>
 
             <div className="pt-3 border-t border-slate-100 flex flex-col gap-2.5">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenAiAdvisor();
-                }}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 cursor-pointer"
-              >
-                <Sparkles className="w-4 h-4 text-emerald-600" />
-                Diagnóstico Rápido con IA
-              </button>
-
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);

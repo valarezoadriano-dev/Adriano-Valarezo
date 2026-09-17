@@ -11,6 +11,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { ADRIANO_PROFILE, CREDENTIALS_LIST } from '../data/content';
+import adrianoPhoto from '../assets/adriano-valarezo.jpg';
 
 interface AboutSectionProps {
   onOpenContact: () => void;
@@ -28,9 +29,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenContact }) => 
             <div className="relative">
               {/* Profile Card Frame */}
               <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm relative overflow-hidden">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-emerald-700 to-slate-900 text-white font-display font-black text-3xl flex items-center justify-center shadow-md mb-6">
-                  ARV
-                </div>
+                <img
+                  src={adrianoPhoto}
+                  alt="Adriano Remigio Valarezo"
+                  className="w-20 h-20 rounded-2xl object-cover shadow-md mb-6"
+                />
 
                 <h3 className="font-display font-extrabold text-2xl text-slate-900 leading-tight">
                   Adriano Remigio Valarezo

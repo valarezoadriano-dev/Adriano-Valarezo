@@ -1,10 +1,9 @@
 import React from 'react';
-import { 
-  CheckCircle2, 
-  ArrowRight, 
-  ShieldCheck, 
-  Award, 
-  Sparkles, 
+import {
+  CheckCircle2,
+  ArrowRight,
+  ShieldCheck,
+  Award,
   MessageSquare,
   TrendingUp,
   FileCheck2,
@@ -12,17 +11,16 @@ import {
   Building2
 } from 'lucide-react';
 import { ADRIANO_PROFILE } from '../data/content';
+import adrianoPhoto from '../assets/adriano-valarezo.jpg';
 
 interface HeroProps {
   onOpenContact: () => void;
-  onOpenAiAdvisor: () => void;
   onExplorePortfolio: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ 
-  onOpenContact, 
-  onOpenAiAdvisor, 
-  onExplorePortfolio 
+export const Hero: React.FC<HeroProps> = ({
+  onOpenContact,
+  onExplorePortfolio
 }) => {
   const whatsappUrl = `https://wa.me/${ADRIANO_PROFILE.whatsappNumber}?text=${encodeURIComponent(
     'Hola Ing. Adriano Valarezo, me comunico desde su sitio web para solicitar una propuesta de consultoría.'
@@ -66,14 +64,6 @@ export const Hero: React.FC<HeroProps> = ({
                 <span>Solicitar Cotización de Servicios</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
-
-              <button
-                onClick={onOpenAiAdvisor}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-slate-800 bg-slate-50 hover:bg-slate-100 border border-slate-300 transition-all cursor-pointer text-sm sm:text-base hover:border-emerald-500"
-              >
-                <Sparkles className="w-4 h-4 text-emerald-600" />
-                <span>Diagnóstico Exprés con IA</span>
-              </button>
             </div>
 
             {/* Secondary fast contact shortcut */}
@@ -104,9 +94,11 @@ export const Hero: React.FC<HeroProps> = ({
               {/* Profile Card Header */}
               <div className="flex items-start justify-between pb-6 border-b border-slate-800">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white font-extrabold text-xl shadow-md border border-emerald-400/30">
-                    AV
-                  </div>
+                  <img
+                    src={adrianoPhoto}
+                    alt="Adriano Remigio Valarezo"
+                    className="w-14 h-14 rounded-xl object-cover shadow-md border border-emerald-400/30"
+                  />
                   <div>
                     <h2 className="text-lg font-bold text-white leading-tight">
                       Adriano Remigio Valarezo

@@ -9,11 +9,9 @@ import { AboutSection } from './components/AboutSection';
 import { QuickContactSection } from './components/QuickContactSection';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
-import { AiAdvisorModal } from './components/AiAdvisorModal';
 import { FloatingActions } from './components/FloatingActions';
 
 export default function App() {
-  const [isAiAdvisorOpen, setIsAiAdvisorOpen] = useState(false);
   const [prefilledService, setPrefilledService] = useState<string>('');
   const [prefilledMessage, setPrefilledMessage] = useState<string>('');
 
@@ -36,23 +34,17 @@ export default function App() {
     scrollToContact(data.service, data.message);
   };
 
-  const handleApplyFromAi = (service: string, summary: string) => {
-    scrollToContact(service, summary);
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 font-sans selection:bg-emerald-600 selection:text-white">
       {/* Sticky Header with navigation & WhatsApp shortcut */}
-      <Header 
-        onOpenAiAdvisor={() => setIsAiAdvisorOpen(true)}
+      <Header
         onOpenContact={() => scrollToContact()}
       />
 
       <main className="flex-grow">
         {/* High-Impact Hero section with trust metrics */}
-        <Hero 
+        <Hero
           onOpenContact={() => scrollToContact()}
-          onOpenAiAdvisor={() => setIsAiAdvisorOpen(true)}
           onExplorePortfolio={scrollToPortfolio}
         />
 
@@ -91,13 +83,6 @@ export default function App() {
 
       {/* Corporate Footer */}
       <Footer />
-
-      {/* AI Diagnostic Advisor Modal */}
-      <AiAdvisorModal 
-        isOpen={isAiAdvisorOpen}
-        onClose={() => setIsAiAdvisorOpen(false)}
-        onApplyDiagnostic={handleApplyFromAi}
-      />
 
       {/* Quick Floating WhatsApp button */}
       <FloatingActions 

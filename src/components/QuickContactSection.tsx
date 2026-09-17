@@ -15,6 +15,9 @@ import {
 import { ADRIANO_PROFILE, SERVICES_LIST } from '../data/content';
 import { ContactFormData } from '../types';
 
+// Public access key from web3forms.com — safe to expose client-side by design.
+const WEB3FORMS_ACCESS_KEY = 'c1f2d624-e8e0-438a-9a6f-b45eadb83c43';
+
 interface QuickContactSectionProps {
   initialService?: string;
   initialMessage?: string;
@@ -68,22 +71,31 @@ export const QuickContactSection: React.FC<QuickContactSectionProps> = ({
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Nueva consulta de ${formData.name} - ${formData.service}`,
+          from_name: formData.name,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          service: formData.service,
+          meeting_preference: formData.meetingPreference,
+          message: formData.message
+        })
       });
 
       const data = await response.json();
-      if (response.ok && data.success) {
+      if (data.success) {
         setIsSubmitted(true);
       } else {
-        // Even if server is offline, mark submitted client-side
-        setIsSubmitted(true);
+        setErrorMessage('No se pudo enviar el formulario. Por favor intente de nuevo o utilice WhatsApp/correo directo.');
       }
     } catch {
-      // Offline graceful fallback
-      setIsSubmitted(true);
+      setErrorMessage('No se pudo conectar con el servidor de envío. Por favor utilice WhatsApp o correo directo.');
     } finally {
       setIsSubmitting(false);
     }
