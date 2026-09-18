@@ -151,8 +151,11 @@ export const QuickContactSection: React.FC<QuickContactSectionProps> = ({
                 <MessageSquare className="w-6 h-6" />
               </div>
               <h3 className="font-bold text-slate-900 text-lg mb-1">
-                WhatsApp Directo
+                WhatsApp & Teléfono Directo
               </h3>
+              <p className="text-sm font-bold text-emerald-800 mb-2 tracking-wide">
+                {ADRIANO_PROFILE.phoneFormatted}
+              </p>
               <p className="text-xs text-slate-600 leading-relaxed mb-4">
                 El canal más rápido para consultas breves, confirmación de disponibilidad o envío de documentos.
               </p>

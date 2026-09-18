@@ -63,6 +63,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
           
           <div className="flex items-center gap-4 text-slate-300">
             <a 
+              href={`tel:${ADRIANO_PROFILE.phone}`}
+              className="hover:text-emerald-400 transition-colors hidden sm:flex items-center gap-1.5 font-medium"
+            >
+              <Phone className="w-3.5 h-3.5 text-emerald-400" />
+              <span>{ADRIANO_PROFILE.phoneFormatted}</span>
+            </a>
+            <span className="hidden sm:inline text-slate-600">|</span>
+            <a 
               href={`mailto:${ADRIANO_PROFILE.email}`} 
               className="hover:text-emerald-400 transition-colors flex items-center gap-1"
             >
@@ -76,7 +84,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
               className="hover:text-emerald-400 transition-colors flex items-center gap-1 font-medium"
             >
               <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
-              <span>WhatsApp Directo</span>
+              <span>WhatsApp</span>
             </a>
           </div>
         </div>

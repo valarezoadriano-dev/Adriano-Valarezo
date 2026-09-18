@@ -2,6 +2,7 @@ import React from 'react';
 import { 
   ArrowUp, 
   Mail, 
+  Phone,
   MessageSquare, 
   MapPin, 
   Award, 
@@ -105,6 +106,16 @@ export const Footer: React.FC = () => {
             </h4>
 
             <div className="space-y-2.5">
+              <a 
+                href={`tel:${ADRIANO_PROFILE.phone}`}
+                className="flex items-center gap-2.5 text-slate-300 hover:text-emerald-400 transition-colors"
+              >
+                <div className="p-1.5 rounded bg-slate-900 border border-slate-800 text-emerald-400">
+                  <Phone className="w-3.5 h-3.5" />
+                </div>
+                <span>Teléfono: {ADRIANO_PROFILE.phoneFormatted}</span>
+              </a>
+
               <a 
                 href={whatsappUrl} 
                 target="_blank" 
