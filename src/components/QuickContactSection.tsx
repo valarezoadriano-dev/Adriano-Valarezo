@@ -16,7 +16,7 @@ import { ADRIANO_PROFILE, SERVICES_LIST } from '../data/content';
 import { ContactFormData } from '../types';
 
 // Public access key from web3forms.com — safe to expose client-side by design.
-const WEB3FORMS_ACCESS_KEY = 'c1f2d624-e8e0-438a-9a6f-b45eadb83c43';
+const WEB3FORMS_ACCESS_KEY = '09edc312-a436-4f66-9a22-e0b8f30bead6';
 
 interface QuickContactSectionProps {
   initialService?: string;
