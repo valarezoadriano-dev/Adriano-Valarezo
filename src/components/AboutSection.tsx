@@ -82,7 +82,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenContact }) => 
             </div>
 
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
-              Más de 18 Años Uniendo la Ciencia Agroindustrial con la Eficiencia Directiva
+              Más de 22 Años Uniendo la Ciencia Agroindustrial con la Eficiencia Directiva
             </h2>
 
             <p className="text-slate-600 text-base leading-relaxed">

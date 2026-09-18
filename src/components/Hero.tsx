@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({
               <Award className="w-4 h-4 text-emerald-600" />
               <span>Ing. en Agroindustria • Zamorano Alumni</span>
               <span className="w-1 h-1 rounded-full bg-slate-400"></span>
-              <span className="text-emerald-700 font-bold">18+ Años de Experiencia</span>
+              <span className="text-emerald-700 font-bold">Más de 22 Años de Experiencia</span>
             </div>
 
             {/* Main Headline */}
@@ -169,7 +169,7 @@ export const Hero: React.FC<HeroProps> = ({
         <div className="mt-14 pt-8 border-t border-slate-200/80 grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="flex items-center gap-3.5">
             <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 shrink-0 font-extrabold text-lg">
-              18+
+              22+
             </div>
             <div>
               <div className="text-sm font-bold text-slate-900">Años de Trayectoria</div>

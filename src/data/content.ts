@@ -4,7 +4,7 @@ export const ADRIANO_PROFILE = {
   name: "Adriano Remigio Valarezo",
   title: "Ingeniero en Agroindustria & Consultor Senior de Proyectos",
   degree: "Ingeniero en Agroindustria (Escuela Agrícola Panamericana Zamorano)",
-  experienceYears: 20,
+  experienceYears: 22,
   projectsCount: "50+",
   email: "valarezo.adriano@gmail.com",
   phone: "+593 99 128 6621",
@@ -12,7 +12,7 @@ export const ADRIANO_PROFILE = {
   whatsappNumber: "593991286621", // international format
   location: "Quito / Guayaquil, Ecuador (Consultoría Internacional en LATAM)",
   summary: "Especialista de alto nivel en ingeniería agroindustrial, dirección estratégica de proyectos bajo estándares internacionales, optimización operativa y desarrollo socioeconómico sostenible.",
-  bio: "Graduado con honores de la prestigiosa Escuela Agrícola Panamericana Zamorano como Ingeniero en Agroindustria, Adriano Remigio Valarezo cuenta con más de 18 años de trayectoria liderando proyectos agroindustriales, gerencia corporativa, consultorías socioeconómicas internacionales (Ecuador, Honduras, Centroamérica) y asesoramiento estratégico a directorios y organismos de desarrollo. Su enfoque integra ingeniería de precisión, rentabilidad financiera y sostenibilidad verificable."
+  bio: "Graduado con honores de la prestigiosa Escuela Agrícola Panamericana Zamorano como Ingeniero en Agroindustria, Adriano Remigio Valarezo cuenta con más de 22 años de trayectoria liderando proyectos agroindustriales, gerencia corporativa, consultorías socioeconómicas internacionales (Ecuador, Honduras, Centroamérica) y asesoramiento estratégico a directorios y organismos de desarrollo. Su enfoque integra ingeniería de precisión, rentabilidad financiera y sostenibilidad verificable."
 };
 
 export const SERVICES_LIST: ServiceItem[] = [
@@ -319,7 +319,7 @@ export const CREDENTIALS_LIST = [
     institution: "Experiencia Directiva Internacional",
     title: "Gerente General y Coordinador de Proyectos",
     description: "Liderazgo comprobado en empresas, juntas generales de accionistas y fiscalización de contratos de inversión.",
-    badge: "18+ Años de Liderazgo"
+    badge: "22+ Años de Liderazgo"
   },
   {
     institution: "Cooperación y Organismos Internacionales",
