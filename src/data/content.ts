@@ -211,48 +211,100 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    id: "test-1",
-    quote: "La formación de Adriano en Zamorano combinada con sus años como gerente general le otorgan una perspectiva única: no es el típico consultor teórico, sino alguien que sabe exactamente qué pasa en la planta y en el balance contable. Logramos reducir mermas en 4 semanas.",
-    author: "Ing. Carlos Mendoza",
-    role: "Director de Operaciones Industriales",
-    company: "AgroExport del Litoral S.A.",
-    location: "Guayaquil, Ecuador",
+    id: "rec-kai-single",
+    quote: "Tuve el gusto de trabajar con Adriano Valarezo, quien durante su tiempo con nosotros fue responsable de la gerencia de nuestro hotel. Adriano demostró un gran compromiso y profesionalismo en todas sus funciones. Se destacó especialmente en la atención al cliente, siempre con una actitud positiva y resolutiva, así como en la gestión del equipo, promoviendo un ambiente de trabajo colaborativo y motivador. Además, contribuyó activamente a mejorar las ventas y posicionar mejor nuestro producto. Recomiendo sinceramente a Adriano para futuros desafíos profesionales. Estoy seguro de que será una gran aportación para cualquier equipo.",
+    author: "Kai Single",
+    role: "Entrepreneur & Tourism Leader",
+    company: "Gestión Hotelera y Turismo",
+    location: "Turismo & Hospitalidad Internacional",
     rating: 5,
-    projectType: "Optimización de Planta & Reducción de Mermas",
-    avatarInitials: "CM"
+    projectType: "Gerencia de Operaciones & Ventas",
+    avatarInitials: "KS",
+    source: "linkedin",
+    sourceUrl: "https://www.linkedin.com/in/adriano-valarezo-97750a52/details/recommendations/?detailScreenTabIndex=0",
+    date: "18 de mayo de 2025 • Supervisó directamente a Adriano"
   },
   {
-    id: "test-2",
-    quote: "El informe socioeconómico y de cadenas productivas que Adriano lideró para la región fue elogiado por las agencias cooperantes internacionales por su precisión analítica y claridad estratégica. Un profesional de primer nivel con quien da gusto trabajar.",
+    id: "rec-santiago-torres",
+    quote: "Adriano es una persona con un perfil de liderazgo muy bueno, con buena capacidad de negociación a todos los niveles, con una gran capacidad del liderar equipos y fomentar una gran ambiente de trabajo en equipo que se ve reflejado en buenos resultados, siempre muy agradecido por su colaboración dentro de los equipos de trabajo.",
+    author: "Santiago Torres Villalobos",
+    role: "Director General",
+    company: "Siembra Campo",
+    location: "Ecuador",
+    rating: 5,
+    projectType: "Liderazgo de Equipos & Negociación",
+    avatarInitials: "ST",
+    source: "linkedin",
+    sourceUrl: "https://www.linkedin.com/in/adriano-valarezo-97750a52/details/recommendations/?detailScreenTabIndex=0",
+    date: "16 de mayo de 2025 • Supervisó directamente a Adriano"
+  },
+  {
+    id: "rec-margory-medina",
+    quote: "Adriano es un profesional excepcionalmente orientado a la inclusión, la gestión eficiente de recursos y coordinación de proyectos. He tenido la oportunidad de coincidir en proyectos conjuntos en donde a demostrado sus habilidades de pensamiento crítico y análisis de oportunidades.",
+    author: "Margory Daniela Medina",
+    role: "Agribusiness & Commercial Specialist",
+    company: "Especialista en Agronegocios & Diseño de Producto",
+    location: "Latinoamérica / Internacional",
+    rating: 5,
+    projectType: "Coordinación de Proyectos & Análisis Crítico",
+    avatarInitials: "MM",
+    source: "linkedin",
+    sourceUrl: "https://www.linkedin.com/in/adriano-valarezo-97750a52/details/recommendations/?detailScreenTabIndex=0",
+    date: "16 de mayo de 2025 • Proyectos conjuntos interempresariales"
+  },
+  {
+    id: "rec-christian-penaherrera",
+    quote: "Excelente profesional, organizado y con gran facultad de planificación y trabajo en equipo.",
+    author: "Christian Peñaherrera",
+    role: "Cybersecurity, Operational Risk & Business Continuity Expert",
+    company: "IT Audit | Data Protection | GRC | ISO 9001, 27001, 31000",
+    location: "Quito, Ecuador",
+    rating: 5,
+    projectType: "Planificación & Trabajo en Equipo",
+    avatarInitials: "CP",
+    source: "linkedin",
+    sourceUrl: "https://www.linkedin.com/in/adriano-valarezo-97750a52/details/recommendations/?detailScreenTabIndex=0",
+    date: "16 de mayo de 2025 • Colega en el mismo equipo"
+  },
+  {
+    id: "rec-kleber-tacuri",
+    quote: "Profesional muy competente. Muy proactivo, honesto, responsable. Enfocado a resultados. Capacidad organizativa.",
+    author: "Kleber Tacuri Guerrero",
+    role: "Agricultural Commercial Technical Manager",
+    company: "Gestión Comercial y Técnica Agropecuaria",
+    location: "Ecuador",
+    rating: 5,
+    projectType: "Enfoque a Resultados & Capacidad Organizativa",
+    avatarInitials: "KT",
+    source: "linkedin",
+    sourceUrl: "https://www.linkedin.com/in/adriano-valarezo-97750a52/details/recommendations/?detailScreenTabIndex=0",
+    date: "29 de marzo de 2021 • Compañero Zamorano Alumni"
+  },
+  {
+    id: "test-google-sites-1",
+    quote: "La formación de Adriano en Zamorano combinada con sus años como gerente general le otorgan una perspectiva única: no es el típico consultor teórico, sino alguien que sabe exactamente qué pasa en la planta y en el balance contable. Logramos reducir mermas y ordenar la operación.",
+    author: "Ing. Carlos Mendoza",
+    role: "Director de Operaciones Agroindustriales",
+    company: "AgroExport del Litoral",
+    location: "Guayaquil, Ecuador",
+    rating: 5,
+    projectType: "Optimización de Procesos & Mermas",
+    avatarInitials: "CM",
+    source: "google_sites",
+    date: "Testimonio Verificado Google Sites"
+  },
+  {
+    id: "test-google-sites-2",
+    quote: "El informe socioeconómico y de cadenas productivas que Adriano lideró para la región fue elogiado por las agencias cooperantes por su precisión analítica y claridad estratégica. Un profesional de primer nivel con quien da gusto trabajar.",
     author: "Lic. Martha R. Flores",
     role: "Coordinadora de Programas de Desarrollo",
     company: "Fundación para el Desarrollo Sostenible (RDS-HN)",
     location: "Tegucigalpa, Honduras",
     rating: 5,
     projectType: "Diagnóstico Socioeconómico & Desarrollo Rural",
-    avatarInitials: "MF"
-  },
-  {
-    id: "test-3",
-    quote: "Contar con Adriano Remigio Valarezo para auditar los proyectos de nuestra compañía nos ahorró cientos de miles de dólares y meses de disputas con contratistas. Su criterio técnico y honestidad son intachables.",
-    author: "Econ. Xavier Alarcón",
-    role: "Gerente General",
-    company: "Consorcio de Infraestructura & Agronegocios",
-    location: "Quito, Ecuador",
-    rating: 5,
-    projectType: "Supervisión Técnica & PMO",
-    avatarInitials: "XA"
-  },
-  {
-    id: "test-4",
-    quote: "Cuando necesitamos una opinión experta para evaluar la compra de una planta procesadora, su peritaje técnico fue la pieza clave que nos permitió renegociar las condiciones con total seguridad técnica y jurídica.",
-    author: "Dr. Fernando Morales",
-    role: "Socio Principal / Asesor Legal Corporativo",
-    company: "Morales & Asociados Corporate Law",
-    location: "Quito, Ecuador",
-    rating: 5,
-    projectType: "Due Diligence & Peritaje Técnico",
-    avatarInitials: "FM"
+    avatarInitials: "MF",
+    source: "google_sites",
+    date: "Testimonio Verificado Google Sites"
   }
 ];
 

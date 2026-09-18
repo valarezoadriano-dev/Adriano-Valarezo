@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://valarezoadriano.github.io/Adriano-Valarezo/sitemap.xml

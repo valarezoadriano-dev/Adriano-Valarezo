@@ -50,6 +50,9 @@ export interface Testimonial {
   rating: number;
   projectType: string;
   avatarInitials: string;
+  source?: 'linkedin' | 'google_sites' | 'direct';
+  sourceUrl?: string;
+  date?: string;
 }
 
 export interface ContactFormData {
