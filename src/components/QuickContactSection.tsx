@@ -125,15 +125,18 @@ export const QuickContactSection: React.FC<QuickContactSectionProps> = ({
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-200">
-            <Send className="w-3.5 h-3.5" />
-            Contacto Rápido & Diagnóstico Directo
+            <Calendar className="w-3.5 h-3.5" />
+            Consulta Inicial · Diagnóstico Sin Compromiso
           </div>
           <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
-            Comuníquese Directamente con Adriano Remigio Valarezo
+            Agende una Consulta Inicial con Adriano Remigio Valarezo
           </h2>
           <p className="text-slate-600 text-base leading-relaxed">
-            Elija el canal de su preferencia para coordinar una llamada de evaluación de 30 minutos sin costo, solicitar una cotización formal o plantear un peritaje urgente.
+            Conversemos sobre los retos y oportunidades de su empresa, proyecto u organización. En esta primera sesión evaluamos su situación para orientarle sobre la ruta de trabajo más conveniente, con total confidencialidad.
           </p>
+          <div className="inline-block bg-slate-100 border border-slate-200 rounded-xl px-4 py-2 text-xs text-slate-600">
+            💡 <strong>No necesita términos de referencia listos:</strong> Una llamada inicial de 25 a 30 minutos es suficiente para orientar el caso.
+          </div>
         </div>
 
         {/* 3 Quick Action Cards */}
@@ -258,10 +261,10 @@ export const QuickContactSection: React.FC<QuickContactSectionProps> = ({
               <div className="border-b border-slate-200 pb-4 flex items-center justify-between">
                 <div>
                   <h3 className="font-display font-bold text-xl text-slate-900">
-                    Formulario Rápido de Cotización y Asesoría
+                    Formulario para Agendar Consulta Inicial
                   </h3>
                   <p className="text-xs text-slate-500 mt-0.5">
-                    Complete los campos para recibir una propuesta técnica preliminar.
+                    Describa brevemente su necesidad para preparar la llamada de diagnóstico preliminar.
                   </p>
                 </div>
                 <div className="hidden sm:flex items-center gap-1.5 text-xs text-emerald-700 font-semibold bg-emerald-100/60 px-3 py-1 rounded-full">
@@ -441,7 +444,7 @@ export const QuickContactSection: React.FC<QuickContactSectionProps> = ({
                       <span>Enviando solicitud...</span>
                     ) : (
                       <>
-                        <span>Solicitar Contacto Directo</span>
+                        <span>Agendar Consulta Inicial</span>
                         <ArrowRight className="w-4 h-4" />
                       </>
                     )}

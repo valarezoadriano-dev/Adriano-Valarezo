@@ -13,6 +13,8 @@ export interface ServiceItem {
   fullDesc: string;
   category: ServiceCategory;
   iconName: string;
+  triggerQuestion?: string;
+  solutionsList?: string[];
   deliverables: string[];
   benefits: string[];
   targetAudience: string;

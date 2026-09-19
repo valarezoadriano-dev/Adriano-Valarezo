@@ -2,7 +2,7 @@ import { ServiceItem, PortfolioProject, Testimonial } from '../types';
 
 export const ADRIANO_PROFILE = {
   name: "Adriano Remigio Valarezo",
-  title: "Ingeniero en Agroindustria & Consultor Senior de Proyectos",
+  title: "Consultor Senior en Ecuador · Agroindustria, Gestión de Proyectos & Sostenibilidad",
   degree: "Ingeniero en Agroindustria (Escuela Agrícola Panamericana Zamorano)",
   experienceYears: 22,
   projectsCount: "50+",
@@ -10,9 +10,9 @@ export const ADRIANO_PROFILE = {
   phone: "+593 99 128 6621",
   phoneFormatted: "+593 99 128 6621",
   whatsappNumber: "593991286621", // international format
-  location: "Quito / Guayaquil, Ecuador (Consultoría Internacional en LATAM)",
-  summary: "Especialista de alto nivel en ingeniería agroindustrial, dirección estratégica de proyectos bajo estándares internacionales, optimización operativa y desarrollo socioeconómico sostenible.",
-  bio: "Graduado con honores de la prestigiosa Escuela Agrícola Panamericana Zamorano como Ingeniero en Agroindustria, Adriano Remigio Valarezo cuenta con más de 22 años de trayectoria liderando proyectos agroindustriales, gerencia corporativa, consultorías socioeconómicas internacionales (Ecuador, Honduras, Centroamérica) y asesoramiento estratégico a directorios y organismos de desarrollo. Su enfoque integra ingeniería de precisión, rentabilidad financiera y sostenibilidad verificable."
+  location: "Ecuador (Cobertura Nacional: Quito, Guayaquil y Provincias) · Proyectos en LATAM",
+  summary: "Consultoría especializada para empresas, proyectos y organizaciones en Ecuador. Más de 22 años de experiencia aportando criterio técnico y estratégico en agroindustria, gestión de proyectos, sostenibilidad y desarrollo empresarial.",
+  bio: "Graduado de la prestigiosa Escuela Agrícola Panamericana Zamorano como Ingeniero en Agroindustria, Adriano Remigio Valarezo cuenta con más de 22 años de experiencia profesional liderando proyectos, gerencia corporativa de empresas, consultorías socioeconómicas internacionales (Ecuador, Honduras, Centroamérica) y asesoramiento a directorios. Apoya a empresas, inversionistas e instituciones a estructurar proyectos, mejorar su gestión, evaluar oportunidades y tomar decisiones con sólido respaldo técnico."
 };
 
 export const SERVICES_LIST: ServiceItem[] = [
@@ -21,10 +21,18 @@ export const SERVICES_LIST: ServiceItem[] = [
     slug: "consultoria-agroindustrial",
     category: "agroindustria",
     iconName: "Wheat",
-    title: "Consultoría Agroindustrial & Cadenas de Valor",
-    subtitle: "Eficiencia en planta, inocuidad y maximización de rendimiento por tonelada",
-    shortDesc: "Diagnóstico operativo profundo, control de calidad, Buenas Prácticas de Manufactura (BPM/HACCP), reducción de mermas y balance de materia en plantas agroindustriales.",
-    fullDesc: "Intervención técnica directa orientada a elevar la productividad de plantas de procesamiento de alimentos, agroexportación y derivados. Auditamos el flujo de operaciones desde la recepción de materia prima hasta el empaque final, reduciendo costos ocultos e implementando normativas internacionales de inocuidad.",
+    title: "Agroindustria y Cadenas de Valor",
+    subtitle: "¿Necesita mejorar un proceso productivo, reducir pérdidas, fortalecer una cadena de valor o desarrollar una iniciativa agroindustrial?",
+    triggerQuestion: "¿Necesita mejorar un proceso productivo, reducir pérdidas, fortalecer una cadena de valor o desarrollar una iniciativa agroindustrial?",
+    solutionsList: [
+      "Diagnóstico y optimización de procesos productivos en planta",
+      "Fortalecimiento y articulación de cadenas de valor",
+      "Productividad, rendimiento y reducción directa de pérdidas",
+      "Calidad, inocuidad alimentaria y normativas BPM / HACCP",
+      "Desarrollo y evaluación técnica de nuevas iniciativas agroindustriales"
+    ],
+    shortDesc: "Diagnóstico operativo, control de calidad, Buenas Prácticas de Manufactura (BPM/HACCP), reducción de mermas y balance de materia para maximizar el rendimiento por tonelada.",
+    fullDesc: "Intervención técnica orientada a elevar la productividad de plantas de procesamiento de alimentos, agroexportación y derivados. Auditamos el flujo de operaciones desde la recepción de materia prima hasta el empaque final, reduciendo costos ocultos e implementando normativas de inocuidad.",
     deliverables: [
       "Auditoría técnica de planta y balance de masa/energía",
       "Plan integral de Buenas Prácticas de Manufactura y HACCP",
@@ -37,8 +45,8 @@ export const SERVICES_LIST: ServiceItem[] = [
       "Cumplimiento ágil de estándares para exportación a EE.UU. y Europa"
     ],
     targetAudience: "Plantas procesadoras de alimentos, agroexportadoras, cooperativas agrícolas y empresas de agroinsumos.",
-    estimatedDuration: "4 a 12 semanas (según tamaño de planta)",
-    pricingModel: "Diagnóstico inicial fijo + Implementación por hitos medibles",
+    estimatedDuration: "4 a 12 semanas (según escala de planta)",
+    pricingModel: "Diagnóstico inicial estructurado + Implementación por fases viables",
     metricsTag: "Hasta -28% en mermas operativas",
     popular: true
   },
@@ -47,8 +55,17 @@ export const SERVICES_LIST: ServiceItem[] = [
     slug: "gestion-proyectos-pmo",
     category: "proyectos",
     iconName: "Briefcase",
-    title: "Gestión Integral y Dirección de Proyectos (PMO)",
-    subtitle: "Formulación técnica, supervisión de hitos y control de presupuesto estricto",
+    title: "Gestión y Dirección de Proyectos",
+    subtitle: "¿Tiene un proyecto que necesita estructurar, ejecutar, controlar o recuperar?",
+    triggerQuestion: "¿Tiene un proyecto que necesita estructurar, ejecutar, controlar o recuperar?",
+    solutionsList: [
+      "Formulación técnica y estructuración integral de proyectos",
+      "Planificación ejecutiva, hitos y cronogramas de ruta crítica",
+      "Dirección, coordinación y supervisión técnica en terreno",
+      "PMO y seguimiento con indicadores claros de desempeño",
+      "Control de presupuestos, compras y gestión preventiva de riesgos",
+      "Evaluación y aseguramiento de resultados para inversionistas"
+    ],
     shortDesc: "Diseño, estructuración técnica y financiera, supervisión y gerencia de proyectos bajo estándares PMI y requisitos de organismos multilaterales (BID, BM, fondos de cooperación).",
     fullDesc: "Acompañamiento integral para inversionistas, consorcios y entidades que requieren garantizar el cumplimiento estricto de cronogramas, calidad y presupuesto. Adriano Valarezo aplica metodologías de PMO probadas en campo con experiencia previa como Gerente General y Coordinador de Proyectos en proyectos de gran envergadura.",
     deliverables: [
@@ -73,8 +90,17 @@ export const SERVICES_LIST: ServiceItem[] = [
     slug: "sostenibilidad-desarrollo",
     category: "sostenibilidad",
     iconName: "Sprout",
-    title: "Sostenibilidad, Estudios Territoriales & Desarrollo Rural",
-    subtitle: "Líneas de base socioeconómicas, modelos de impacto y economía circular",
+    title: "Sostenibilidad y Desarrollo Territorial",
+    subtitle: "¿Su organización desarrolla proyectos productivos, sociales, territoriales o de sostenibilidad?",
+    triggerQuestion: "¿Su organización desarrolla proyectos productivos, sociales, territoriales o de sostenibilidad?",
+    solutionsList: [
+      "Planes de desarrollo territorial y ordenamiento productivo",
+      "Proyectos productivos, comunitarios y articulación social",
+      "Estudios socioeconómicos y líneas de base rigurosas en campo",
+      "Estrategias de sostenibilidad, economía circular y criterios ESG",
+      "Fortalecimiento organizacional y capacitación de equipos",
+      "Evaluación de impacto para agencias de cooperación y desarrollo"
+    ],
     shortDesc: "Elaboración de diagnósticos socioeconómicos, estudios de factibilidad comunitaria, planes de huella ambiental y articulación de cadenas productivas sostenibles.",
     fullDesc: "Basado en amplia trayectoria con instituciones como la Fundación RDS-HN y proyectos de desarrollo en América Central y Ecuador. Diseñamos e implementamos estrategias que combinan viabilidad económica con impacto social positivo y conservación ecológica, ideales para licitaciones y fondos no reembolsables.",
     deliverables: [
@@ -99,8 +125,17 @@ export const SERVICES_LIST: ServiceItem[] = [
     slug: "asesoria-estrategica",
     category: "consultoria",
     iconName: "TrendingUp",
-    title: "Asesoría Estratégica Empresarial & Dictámenes Técnicos",
-    subtitle: "Decisiones de alto nivel para dueños, inversionistas y juntas directivas",
+    title: "Asesoría Estratégica y Dictámenes Técnicos",
+    subtitle: "¿Necesita evaluar una inversión, analizar la viabilidad de un proyecto o contar con una opinión técnica independiente?",
+    triggerQuestion: "¿Necesita evaluar una inversión, analizar la viabilidad de un proyecto o contar con una opinión técnica independiente?",
+    solutionsList: [
+      "Diagnóstico empresarial y operativo integral",
+      "Estudios de factibilidad técnica y viabilidad de inversiones",
+      "Due Diligence técnico para adquisición de activos agropecuarios",
+      "Análisis estratégico y acompañamiento a juntas directivas",
+      "Dictámenes periciales e informes técnicos independientes",
+      "Identificación de riesgos, oportunidades y planes de mejora continua"
+    ],
     shortDesc: "Auditorías de due diligence, peritajes técnicos de valoración agroindustrial, reestructuración operativa y asesoramiento directo a la Gerencia General.",
     fullDesc: "El valor de contar con un asesor que ha estado al mando como Gerente General y que domina la base técnica de la ingeniería. Analizamos la viabilidad de adquisiciones de activos agroindustriales, evaluamos maquinaria, dictaminamos peritajes ante arbitrajes y rediseñamos la estructura organizativa para acelerar la rentabilidad.",
     deliverables: [

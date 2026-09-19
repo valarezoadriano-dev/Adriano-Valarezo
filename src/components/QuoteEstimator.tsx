@@ -103,13 +103,13 @@ Objetivo: ${estimation.roiExpectation}`;
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700 border border-slate-200">
             <Calculator className="w-3.5 h-3.5 text-emerald-600" />
-            Estimador de Alcance & Propuesta
+            Diagnóstico Previo de Alcance
           </div>
           <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
-            Configure su Proyecto y Obtenga una Estructura de Trabajo Inmediata
+            Identifique la Ruta de Acción para su Empresa o Proyecto
           </h2>
           <p className="text-slate-600 text-base leading-relaxed">
-            Seleccione las características de su requerimiento para proyectar las fases de intervención, el tiempo estimado y las metas de retorno antes de agendar su llamada técnica con Adriano.
+            Si aún está evaluando las necesidades de su caso, seleccione su situación para obtener una proyección de etapas, tiempos sugeridos y ruta de trabajo recomendada antes de agendar su consulta.
           </p>
         </div>
 
@@ -260,7 +260,7 @@ Objetivo: ${estimation.roiExpectation}`;
                 onClick={handleApplyToForm}
                 className="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-slate-900 bg-emerald-400 hover:bg-emerald-300 transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm"
               >
-                <span>Usar Esta Cotización en el Formulario</span>
+                <span>Agendar Consulta con Esta Ruta</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 

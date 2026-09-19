@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ServicesSection } from './components/ServicesSection';
+import { MethodologySection } from './components/MethodologySection';
 import { QuoteEstimator } from './components/QuoteEstimator';
 import { PortfolioSection } from './components/PortfolioSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
@@ -48,9 +49,14 @@ export default function App() {
           onExplorePortfolio={scrollToPortfolio}
         />
 
-        {/* Core Services Section optimized for selling services */}
+        {/* Core Services Section with client problem-focused questions */}
         <ServicesSection 
           onSelectService={(serviceTitle) => scrollToContact(serviceTitle)}
+        />
+
+        {/* Methodology: Understand, Diagnose, Design, Implement */}
+        <MethodologySection 
+          onOpenContact={() => scrollToContact()}
         />
 
         {/* Interactive Scope & Quote Estimator */}

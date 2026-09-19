@@ -46,13 +46,17 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-display font-black text-slate-900 text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] leading-[1.12] tracking-tight">
-              Ingeniería de Precisión y <span className="text-emerald-700">Gestión Estratégica</span> para Proyectos de Alto Impacto
+            <h1 className="font-display font-black text-slate-900 text-3xl sm:text-4xl md:text-5xl lg:text-[2.85rem] leading-[1.14] tracking-tight">
+              Consultoría Especializada para Empresas, Proyectos y Organizaciones en <span className="text-emerald-700">Ecuador</span>
             </h1>
 
             {/* Subhead / Value Proposition */}
-            <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
-              Servicios profesionales especializados para empresas agroindustriales, organismos de desarrollo e inversionistas. Conduzco la optimización de procesos productivos, dirección de proyectos bajo metodología PMO, estudios de sostenibilidad socioeconómica y dictámenes técnicos independientes.
+            <p className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl font-medium">
+              Más de 22 años de experiencia aportando criterio técnico y estratégico en agroindustria, gestión de proyectos, sostenibilidad y desarrollo empresarial.
+            </p>
+
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+              Apoyo a empresas, inversionistas, instituciones y organizaciones a estructurar proyectos, mejorar su gestión operativa, evaluar oportunidades y tomar decisiones con sólido respaldo técnico.
             </p>
 
             {/* Direct Calls to Action (CTAs) */}
@@ -61,8 +65,19 @@ export const Hero: React.FC<HeroProps> = ({
                 onClick={onOpenContact}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 shadow-md shadow-emerald-700/15 hover:shadow-lg hover:shadow-emerald-700/20 transition-all cursor-pointer text-sm sm:text-base group"
               >
-                <span>Solicitar Cotización de Servicios</span>
+                <CalendarCheck className="w-4 h-4" />
+                <span>Agendar una Consulta Inicial</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+
+              <button
+                onClick={() => {
+                  const el = document.getElementById('servicios');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-all cursor-pointer text-sm sm:text-base"
+              >
+                <span>Conocer mis Servicios</span>
               </button>
             </div>
 
