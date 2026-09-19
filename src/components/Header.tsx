@@ -6,18 +6,16 @@ import {
   Phone,
   Calendar,
   CheckCircle2,
-  MessageSquare,
-  Palette
+  MessageSquare
 } from 'lucide-react';
 import { ADRIANO_PROFILE } from '../data/content';
 import { BrandSymbol } from './BrandLogo';
 
 interface HeaderProps {
   onOpenContact: (prefilledService?: string) => void;
-  onOpenBrandKit?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenBrandKit }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -36,16 +34,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenBrandKit })
     { name: 'Casos', href: '#portafolio' },
     { name: 'Testimonios', href: '#testimonios' },
     { name: 'Trayectoria', href: '#sobre-mi' },
-    { name: 'Kit de Marca', href: '#identidad-marca', isBrandKit: true },
     { name: 'Preguntas', href: '#faq' },
   ];
 
-  const handleNavClick = (link: { name: string; href: string; isBrandKit?: boolean }) => {
+  const handleNavClick = (link: { name: string; href: string }) => {
     setMobileMenuOpen(false);
-    if (link.isBrandKit && onOpenBrandKit) {
-      onOpenBrandKit();
-      return;
-    }
     const element = document.querySelector(link.href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -130,14 +123,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenBrandKit })
               <button
                 key={link.name}
                 onClick={() => handleNavClick(link)}
-                className={`text-sm font-semibold transition-colors cursor-pointer flex items-center gap-1.5 ${
-                  link.isBrandKit
-                    ? 'text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/80 hover:bg-emerald-100/70'
-                    : 'text-slate-600 hover:text-emerald-600'
-                }`}
+                className="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors cursor-pointer"
               >
-                {link.isBrandKit && <Palette className="w-3.5 h-3.5 text-emerald-600" />}
-                <span>{link.name}</span>
+                {link.name}
               </button>
             ))}
           </nav>
@@ -172,14 +160,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenBrandKit })
                 <button
                   key={link.name}
                   onClick={() => handleNavClick(link)}
-                  className={`text-left px-3 py-2 text-sm font-semibold rounded-lg transition-colors cursor-pointer flex items-center justify-between ${
-                    link.isBrandKit
-                      ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
-                      : 'text-slate-700 hover:bg-emerald-50 hover:text-emerald-700'
-                  }`}
+                  className="text-left px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-colors cursor-pointer"
                 >
-                  <span>{link.name}</span>
-                  {link.isBrandKit && <Palette className="w-4 h-4 text-emerald-600" />}
+                  {link.name}
                 </button>
               ))}
             </div>

@@ -8,7 +8,7 @@ import {
   Award, 
   ShieldCheck,
   CheckCircle2,
-  Palette
+  Lock
 } from 'lucide-react';
 import { ADRIANO_PROFILE } from '../data/content';
 import { BrandSymbol } from './BrandLogo';
@@ -64,18 +64,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit }) => {
                 América Latina
               </span>
             </div>
-
-            {onOpenBrandKit && (
-              <div className="pt-2">
-                <button
-                  onClick={onOpenBrandKit}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-[11px] font-bold text-emerald-400 bg-emerald-950/40 border border-emerald-800/50 hover:bg-emerald-900/50 transition-colors cursor-pointer"
-                >
-                  <Palette className="w-3.5 h-3.5" />
-                  <span>Manual & Kit de Marca Oficial</span>
-                </button>
-              </div>
-            )}
           </div>
 
           {/* Navigation Links - 3 cols */}
@@ -112,12 +100,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit }) => {
               <li>
                 <a href="#sobre-mi" className="hover:text-emerald-400 transition-colors">
                   Sobre Adriano Remigio Valarezo
-                </a>
-              </li>
-              <li>
-                <a href="#identidad-marca" className="hover:text-emerald-400 transition-colors flex items-center gap-1.5 text-emerald-400">
-                  <Palette className="w-3 h-3" />
-                  <span>Kit de Marca & Identidad</span>
                 </a>
               </li>
               <li>
@@ -191,8 +173,18 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit }) => {
             © {new Date().getFullYear()} Adriano Remigio Valarezo. Todos los derechos reservados.
           </div>
 
-          <div className="flex items-center gap-6">
-            <span>Rediseño profesional optimizado para conversión</span>
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            {onOpenBrandKit && (
+              <button
+                onClick={onOpenBrandKit}
+                className="inline-flex items-center gap-1.5 text-slate-600 hover:text-emerald-400 transition-colors cursor-pointer text-[11px]"
+                title="Acceso reservado a manual de marca e identidad corporativa"
+              >
+                <Lock className="w-3 h-3 text-slate-600 group-hover:text-emerald-400" />
+                <span>Acceso Privado</span>
+              </button>
+            )}
+
             <button
               onClick={scrollToTop}
               className="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white transition-colors cursor-pointer flex items-center gap-1"

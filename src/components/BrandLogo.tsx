@@ -101,12 +101,12 @@ export const BrandSymbol: React.FC<{
       >
         <defs>
           <linearGradient id="triangleEmeraldGrad" x1="12%" y1="12%" x2="88%" y2="88%">
-            <stop offset="0%" stop-color="#047857" />
-            <stop offset="100%" stop-color="#064E3B" />
+            <stop offset="0%" stopColor="#047857" />
+            <stop offset="100%" stopColor="#064E3B" />
           </linearGradient>
           <linearGradient id="sproutGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#059669" />
-            <stop offset="100%" stop-color="#10B981" />
+            <stop offset="0%" stopColor="#059669" />
+            <stop offset="100%" stopColor="#10B981" />
           </linearGradient>
           <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
             <feDropShadow dx="0" dy="1" stdDeviation="1.5" floodOpacity="0.15" />

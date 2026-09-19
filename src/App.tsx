@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ServicesSection } from './components/ServicesSection';
@@ -7,7 +7,6 @@ import { QuoteEstimator } from './components/QuoteEstimator';
 import { PortfolioSection } from './components/PortfolioSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { AboutSection } from './components/AboutSection';
-import { BrandIdentitySection } from './components/BrandIdentitySection';
 import { QuickContactSection } from './components/QuickContactSection';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
@@ -18,6 +17,19 @@ export default function App() {
   const [prefilledService, setPrefilledService] = useState<string>('');
   const [prefilledMessage, setPrefilledMessage] = useState<string>('');
   const [isBrandKitOpen, setIsBrandKitOpen] = useState<boolean>(false);
+
+  // Check URL parameters for private brand kit access (e.g., ?kit=privado, ?brand=private, #kit-privado)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const isKitParam = params.get('kit') === 'privado' || params.get('brand') === 'private' || params.get('acceso') === 'marca';
+      const isKitHash = window.location.hash === '#kit-privado' || window.location.hash === '#identidad-marca';
+      
+      if (isKitParam || isKitHash) {
+        setIsBrandKitOpen(true);
+      }
+    }
+  }, []);
 
   const scrollToContact = (serviceTitle?: string, message?: string) => {
     if (serviceTitle) setPrefilledService(serviceTitle);
@@ -43,7 +55,6 @@ export default function App() {
       {/* Sticky Header with navigation & WhatsApp shortcut */}
       <Header
         onOpenContact={() => scrollToContact()}
-        onOpenBrandKit={() => setIsBrandKitOpen(true)}
       />
 
       <main className="flex-grow">
@@ -81,11 +92,6 @@ export default function App() {
           onOpenContact={() => scrollToContact()}
         />
 
-        {/* Corporate Brand Identity & Visual System Section */}
-        <BrandIdentitySection 
-          onOpenBrandKit={() => setIsBrandKitOpen(true)}
-        />
-
         {/* Quick Contact Section (prominently requested by user) */}
         <QuickContactSection 
           initialService={prefilledService}
@@ -96,7 +102,7 @@ export default function App() {
         <FaqSection />
       </main>
 
-      {/* Corporate Footer */}
+      {/* Corporate Footer with discreet private access trigger in bottom bar */}
       <Footer 
         onOpenBrandKit={() => setIsBrandKitOpen(true)}
       />
@@ -106,7 +112,7 @@ export default function App() {
         onOpenContact={() => scrollToContact()}
       />
 
-      {/* Corporate Brand Kit & Guidelines Modal */}
+      {/* Corporate Brand Kit & Guidelines Modal (Protected with Private Access Gate) */}
       <BrandKitModal 
         isOpen={isBrandKitOpen}
         onClose={() => setIsBrandKitOpen(false)}
