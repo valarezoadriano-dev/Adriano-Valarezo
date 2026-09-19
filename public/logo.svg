@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="triangleEmeraldGradFull" x1="12%" y1="12%" x2="88%" y2="88%">
+      <stop offset="0%" stop-color="#047857" />
+      <stop offset="100%" stop-color="#064E3B" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Geometrical Triangle Delta -->
+  <polygon points="50,14 87,80 13,80" fill="none" stroke="url(#triangleEmeraldGradFull)" stroke-width="7.5" stroke-linejoin="round" stroke-linecap="round" />
+  
+  <!-- Vertex accent nodes in Harvest Gold -->
+  <circle cx="50" cy="14" r="2.4" fill="#D97706" />
+  <circle cx="87" cy="80" r="2.4" fill="#D97706" />
+  <circle cx="13" cy="80" r="2.4" fill="#D97706" />
+  
+  <!-- Semilla / Raíz de anclaje -->
+  <circle cx="50" cy="72" r="4.2" fill="#D97706" />
+  
+  <!-- Tallo central con curvatura ascendente -->
+  <path d="M 50,72 C 50,60 50.5,49 50,38" fill="none" stroke="#064E3B" stroke-width="4.5" stroke-linecap="round" />
+  
+  <!-- Hoja Izquierda -->
+  <path d="M 50,56 C 41.5,54 35.5,46 36,37.5 C 44.5,37.5 49.5,46 50,56 Z" fill="#10B981" />
+  
+  <!-- Hoja Derecha -->
+  <path d="M 50,47 C 58.5,45 64.5,37 64,28.5 C 55.5,28.5 50.5,37 50,47 Z" fill="#047857" />
+  
+  <!-- Yema apical dorada -->
+  <circle cx="50" cy="38" r="2.6" fill="#D97706" />
+</svg>
