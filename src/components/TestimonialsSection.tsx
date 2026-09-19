@@ -16,7 +16,11 @@ export const TestimonialsSection: React.FC = () => {
   const googleSitesCount = TESTIMONIALS.filter((t) => t.source === 'google_sites').length;
 
   return (
-    <section id="testimonios" className="py-16 md:py-24 bg-white border-b border-slate-200">
+    <section 
+      id="testimonios" 
+      aria-label="Testimonios y Recomendaciones Directivas"
+      className="py-16 md:py-24 bg-white border-b border-slate-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         {/* Header */}
@@ -86,8 +90,10 @@ export const TestimonialsSection: React.FC = () => {
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredTestimonials.map((t) => (
-            <div
+            <article
               key={t.id}
+              id={`testimonio-${t.id}`}
+              aria-label={`Testimonio de ${t.author}, ${t.role} en ${t.company}`}
               className="bg-slate-50/90 rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col justify-between shadow-2xs hover:shadow-sm transition-all relative"
             >
               <Quote className="w-8 h-8 text-emerald-200 absolute top-6 right-6 pointer-events-none" />
@@ -124,9 +130,9 @@ export const TestimonialsSection: React.FC = () => {
                 </div>
 
                 {/* Quote body */}
-                <p className="text-slate-700 text-sm sm:text-base leading-relaxed italic mb-6">
+                <blockquote className="text-slate-700 text-sm sm:text-base leading-relaxed italic mb-6">
                   "{t.quote}"
-                </p>
+                </blockquote>
               </div>
 
               {/* Author footer */}
@@ -136,9 +142,9 @@ export const TestimonialsSection: React.FC = () => {
                     {t.avatarInitials}
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-sm leading-snug">
+                    <h3 className="font-bold text-slate-900 text-sm leading-snug">
                       {t.author}
-                    </h4>
+                    </h3>
                     <p className="text-xs text-slate-600 font-medium">
                       {t.role} • <span className="text-emerald-800 font-semibold">{t.company}</span>
                     </p>
@@ -165,41 +171,41 @@ export const TestimonialsSection: React.FC = () => {
                   </a>
                 )}
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
-        {/* Corporate Trust Bar */}
+        {/* Corporate Trust Bar with internal cross-links */}
         <div className="mt-12 bg-slate-900 text-white rounded-2xl p-6 sm:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
-          <div className="flex items-center justify-center md:justify-start gap-3">
-            <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400">
+          <a href="#contacto" className="flex items-center justify-center md:justify-start gap-3 group hover:opacity-90 transition-opacity">
+            <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500/30 transition-colors">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <div className="text-sm font-bold text-white">100% Confidencialidad</div>
+              <div className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">100% Confidencialidad</div>
               <div className="text-xs text-slate-400">Acuerdos de confidencialidad (NDA) estrictos</div>
             </div>
-          </div>
+          </a>
 
-          <div className="flex items-center justify-center md:justify-start gap-3">
-            <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400">
+          <a href="#metodologia" className="flex items-center justify-center md:justify-start gap-3 group hover:opacity-90 transition-opacity">
+            <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500/30 transition-colors">
               <Building2 className="w-6 h-6" />
             </div>
             <div>
-              <div className="text-sm font-bold text-white">Sustento en Directorios</div>
+              <div className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">Sustento en Directorios</div>
               <div className="text-xs text-slate-400">Defensa técnica ante juntas de accionistas y bancos</div>
             </div>
-          </div>
+          </a>
 
-          <div className="flex items-center justify-center md:justify-start gap-3">
-            <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400">
+          <a href="#cotizador" className="flex items-center justify-center md:justify-start gap-3 group hover:opacity-90 transition-opacity">
+            <div className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500/30 transition-colors">
               <CheckCircle2 className="w-6 h-6" />
             </div>
             <div>
-              <div className="text-sm font-bold text-white">Retorno de Inversión (ROI)</div>
+              <div className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">Retorno de Inversión (ROI)</div>
               <div className="text-xs text-slate-400">Enfoque centrado en rentabilidad y reducción de costos</div>
             </div>
-          </div>
+          </a>
         </div>
 
       </div>

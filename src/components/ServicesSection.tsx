@@ -43,7 +43,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
     : SERVICES_LIST.filter(s => s.category === activeTab);
 
   return (
-    <section id="servicios" className="py-16 md:py-24 bg-slate-50 border-b border-slate-200">
+    <section 
+      id="servicios" 
+      aria-label="Servicios Profesionales de Consultoría Agroindustrial y PMO"
+      className="py-16 md:py-24 bg-slate-50 border-b border-slate-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         {/* Section Header */}
@@ -119,8 +123,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             const isExpanded = expandedCardId === service.id;
 
             return (
-              <div
+              <article
                 key={service.id}
+                id={`servicio-${service.id}`}
+                aria-label={`Servicio: ${service.title}`}
                 className="bg-white rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group hover:border-slate-300"
               >
                 {/* Popular or Highlight badge */}
@@ -209,8 +215,24 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   )}
                 </div>
 
+                {/* Internal Cross-Linking Helpers */}
+                <div className="pt-4 mt-2 flex items-center justify-between text-xs text-slate-500 border-t border-slate-100/70">
+                  <a 
+                    href="#cotizador" 
+                    className="text-emerald-700 hover:text-emerald-800 font-medium hover:underline inline-flex items-center gap-1"
+                  >
+                    <span>Calcular estimación para este servicio →</span>
+                  </a>
+                  <a 
+                    href="#portafolio" 
+                    className="text-slate-400 hover:text-slate-700 font-medium hover:underline hidden sm:inline"
+                  >
+                    Ver casos de éxito
+                  </a>
+                </div>
+
                 {/* Bottom Card Actions */}
-                <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 mt-4">
+                <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
                   <button
                     onClick={() => setExpandedCardId(isExpanded ? null : service.id)}
                     className="text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors inline-flex items-center justify-center gap-1 cursor-pointer py-1"
@@ -226,12 +248,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>
 
-        {/* Bottom Fast Custom Assistance Banner */}
+        {/* Bottom Fast Custom Assistance Banner with Internal Anchors */}
         <div className="mt-12 bg-emerald-900 text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
           <div className="space-y-2 text-center md:text-left">
             <h3 className="font-display font-bold text-xl text-white">
@@ -240,6 +262,15 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             <p className="text-emerald-200 text-xs sm:text-sm max-w-2xl">
               Adriano Remigio Valarezo formula propuestas técnicas personalizadas adaptadas al tamaño de su operación, normativa sectorial y requerimientos de financiamiento.
             </p>
+            <div className="pt-1 flex items-center justify-center md:justify-start gap-4 text-xs text-emerald-300">
+              <a href="#cotizador" className="underline hover:text-white transition-colors">
+                Estimar alcance & cotización
+              </a>
+              <span>•</span>
+              <a href="#metodologia" className="underline hover:text-white transition-colors">
+                Conocer metodología de 4 fases
+              </a>
+            </div>
           </div>
 
           <button

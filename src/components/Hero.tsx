@@ -29,7 +29,11 @@ export const Hero: React.FC<HeroProps> = ({
   )}`;
 
   return (
-    <section className="relative overflow-hidden pt-8 pb-16 md:pt-16 md:pb-24 bg-white border-b border-slate-200/80 bg-grid-pattern">
+    <section 
+      id="inicio"
+      aria-label="Presentación e Identidad de Adriano Remigio Valarezo"
+      className="relative overflow-hidden pt-8 pb-16 md:pt-16 md:pb-24 bg-white border-b border-slate-200/80 bg-grid-pattern"
+    >
       {/* Decorative gradient glow in background */}
       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-teal-500/10 blur-3xl pointer-events-none" />
@@ -47,40 +51,41 @@ export const Hero: React.FC<HeroProps> = ({
               <span className="text-emerald-700 font-bold">Más de 22 Años de Experiencia</span>
             </div>
 
-            {/* Main Headline */}
+            {/* Main Headline: Single H1 tag describing the exact purpose and authority of the page */}
             <h1 className="font-display font-black text-slate-900 text-3xl sm:text-4xl md:text-5xl lg:text-[2.85rem] leading-[1.14] tracking-tight">
-              Consultoría Especializada para Empresas, Proyectos y Organizaciones en <span className="text-emerald-700">Ecuador</span>
+              Adriano Remigio Valarezo — Consultoría Especializada en <span className="text-emerald-700">Agroindustria</span>, Gestión de Proyectos y Sostenibilidad
             </h1>
 
             {/* Subhead / Value Proposition */}
             <p className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-2xl font-medium">
-              Más de 22 años de experiencia aportando criterio técnico y estratégico en agroindustria, gestión de proyectos, sostenibilidad y desarrollo empresarial.
+              Más de 22 años de experiencia aportando criterio técnico y estratégico en agroindustria, gestión de proyectos, sostenibilidad y desarrollo empresarial en Ecuador y la región.
             </p>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
               Apoyo a empresas, inversionistas, instituciones y organizaciones a estructurar proyectos, mejorar su gestión operativa, evaluar oportunidades y tomar decisiones con sólido respaldo técnico.
             </p>
 
-            {/* Direct Calls to Action (CTAs) */}
+            {/* Direct Calls to Action (CTAs) with Internal Anchors for Search Crawlers */}
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-              <button
-                onClick={onOpenContact}
+              <a
+                href="#contacto"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onOpenContact();
+                }}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 shadow-md shadow-emerald-700/15 hover:shadow-lg hover:shadow-emerald-700/20 transition-all cursor-pointer text-sm sm:text-base group"
               >
                 <CalendarCheck className="w-4 h-4" />
                 <span>Agendar una Consulta Inicial</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
 
-              <button
-                onClick={() => {
-                  const el = document.getElementById('servicios');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
+              <a
+                href="#servicios"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-all cursor-pointer text-sm sm:text-base"
               >
-                <span>Conocer mis Servicios</span>
-              </button>
+                <span>Explorar Servicios Profesionales</span>
+              </a>
             </div>
 
             {/* Secondary fast contact shortcut */}
@@ -104,7 +109,10 @@ export const Hero: React.FC<HeroProps> = ({
 
           {/* Right Visual Card / Trust Panel - 5 cols */}
           <div className="lg:col-span-5">
-            <div className="relative bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-800 overflow-hidden">
+            <article 
+              aria-label="Perfil Directivo y Síntesis de Resultados de Adriano Remigio Valarezo"
+              className="relative bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-800 overflow-hidden"
+            >
               {/* Background ambient lighting */}
               <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-emerald-600/20 rounded-full blur-2xl"></div>
 
@@ -177,60 +185,64 @@ export const Hero: React.FC<HeroProps> = ({
                 <div className="text-xs text-slate-400">
                   <span className="text-white font-medium">Cobertura:</span> Ecuador, Honduras & LATAM
                 </div>
-                <button
-                  onClick={onExplorePortfolio}
+                <a
+                  href="#portafolio"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onExplorePortfolio();
+                  }}
                   className="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1 cursor-pointer"
                 >
                   <span>Explorar Casos de Estudio</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                </a>
               </div>
-            </div>
+            </article>
           </div>
 
         </div>
 
-        {/* Four Trust Pillar Metrics Bar */}
+        {/* Four Trust Pillar Metrics Bar with contextual internal anchor links */}
         <div className="mt-14 pt-8 border-t border-slate-200/80 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 shrink-0 font-extrabold text-lg">
+          <a href="#sobre-mi" className="flex items-center gap-3.5 group hover:opacity-90 transition-opacity">
+            <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 shrink-0 font-extrabold text-lg group-hover:bg-emerald-100 transition-colors">
               22+
             </div>
             <div>
-              <div className="text-sm font-bold text-slate-900">Años de Trayectoria</div>
+              <div className="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Años de Trayectoria</div>
               <div className="text-xs text-slate-500">En agroindustria y dirección PMO</div>
             </div>
-          </div>
+          </a>
 
-          <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-800 shrink-0 font-extrabold text-lg">
+          <a href="#portafolio" className="flex items-center gap-3.5 group hover:opacity-90 transition-opacity">
+            <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-800 shrink-0 font-extrabold text-lg group-hover:bg-slate-200 transition-colors">
               50+
             </div>
             <div>
-              <div className="text-sm font-bold text-slate-900">Proyectos & Dictámenes</div>
+              <div className="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Proyectos & Dictámenes</div>
               <div className="text-xs text-slate-500">Ejecución técnica y gerencial</div>
             </div>
-          </div>
+          </a>
 
-          <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+          <a href="#sobre-mi" className="flex items-center gap-3.5 group hover:opacity-90 transition-opacity">
+            <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 shrink-0 group-hover:bg-emerald-100 transition-colors">
               <Award className="w-6 h-6 text-emerald-700" />
             </div>
             <div>
-              <div className="text-sm font-bold text-slate-900">Zamorano Alumni</div>
+              <div className="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Zamorano Alumni</div>
               <div className="text-xs text-slate-500">Escuela Agrícola Panamericana</div>
             </div>
-          </div>
+          </a>
 
-          <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-800 shrink-0">
+          <a href="#metodologia" className="flex items-center gap-3.5 group hover:opacity-90 transition-opacity">
+            <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-800 shrink-0 group-hover:bg-slate-200 transition-colors">
               <ShieldCheck className="w-6 h-6 text-slate-800" />
             </div>
             <div>
-              <div className="text-sm font-bold text-slate-900">Garantía de Rigor</div>
+              <div className="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Garantía de Rigor</div>
               <div className="text-xs text-slate-500">Normas BPM, HACCP y PMO</div>
             </div>
-          </div>
+          </a>
         </div>
 
       </div>

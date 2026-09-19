@@ -27,7 +27,11 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onSelectProj
     : PORTFOLIO_PROJECTS.filter(p => p.category === selectedCategory);
 
   return (
-    <section id="portafolio" className="py-16 md:py-24 bg-slate-50 border-b border-slate-200">
+    <section 
+      id="portafolio" 
+      aria-label="Portafolio Destacado y Casos de Éxito en Agroindustria y PMO"
+      className="py-16 md:py-24 bg-slate-50 border-b border-slate-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         {/* Header */}
@@ -72,8 +76,10 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onSelectProj
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredProjects.map((project) => (
-            <div
+            <article
               key={project.id}
+              id={`proyecto-${project.id}`}
+              aria-label={`Caso de Estudio: ${project.title}`}
               className="bg-white rounded-2xl border border-slate-200/90 shadow-xs hover:shadow-md transition-all duration-200 p-6 sm:p-8 flex flex-col justify-between group"
             >
               <div>
@@ -135,24 +141,33 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onSelectProj
                 </div>
               </div>
 
-              {/* Bottom Actions */}
+              {/* Bottom Actions with Internal Links */}
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
                 <button
                   onClick={() => setSelectedProject(project)}
                   className="text-xs font-bold text-slate-700 hover:text-emerald-700 transition-colors inline-flex items-center gap-1 cursor-pointer"
                 >
-                  <span>Ver Ficha Técnica Completa</span>
+                  <span>Ver Ficha Técnica</span>
                   <ChevronRight className="w-4 h-4" />
                 </button>
 
-                <button
-                  onClick={() => onSelectProjectForInquiry(`Servicio similar al caso: ${project.title}`)}
-                  className="px-3 py-1.5 rounded-lg text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors cursor-pointer"
-                >
-                  Solicitar Caso Similar
-                </button>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="#servicios"
+                    className="text-xs text-slate-500 hover:text-emerald-700 underline hidden sm:inline"
+                    title="Ver servicios técnicos vinculados"
+                  >
+                    Servicios afines
+                  </a>
+                  <button
+                    onClick={() => onSelectProjectForInquiry(`Servicio similar al caso: ${project.title}`)}
+                    className="px-3 py-1.5 rounded-lg text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors cursor-pointer"
+                  >
+                    Solicitar Caso Similar
+                  </button>
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 

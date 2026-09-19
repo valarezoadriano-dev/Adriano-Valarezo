@@ -118,28 +118,36 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav aria-label="Navegación principal" className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
-              <button
+              <a
                 key={link.name}
-                onClick={() => handleNavClick(link)}
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(link);
+                }}
                 className="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors cursor-pointer"
               >
                 {link.name}
-              </button>
+              </a>
             ))}
           </nav>
 
           {/* Direct CTAs */}
           <div className="hidden sm:flex items-center gap-3">
             {/* Primary CTA */}
-            <button
-              onClick={() => onOpenContact()}
+            <a
+              href="#contacto"
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenContact();
+              }}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs md:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 shadow-sm transition-all cursor-pointer hover:shadow hover:-translate-y-0.5"
             >
               <Calendar className="w-4 h-4" />
               <span>Agendar Consulta Inicial</span>
-            </button>
+            </a>
           </div>
 
           {/* Mobile hamburger button */}
@@ -155,21 +163,27 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
         {/* Mobile dropdown menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 animate-in fade-in slide-in-from-top-2">
-            <div className="flex flex-col space-y-2">
+            <nav aria-label="Menú móvil" className="flex flex-col space-y-2">
               {navLinks.map((link) => (
-                <button
+                <a
                   key={link.name}
-                  onClick={() => handleNavClick(link)}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link);
+                  }}
                   className="text-left px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-colors cursor-pointer"
                 >
                   {link.name}
-                </button>
+                </a>
               ))}
-            </div>
+            </nav>
 
             <div className="pt-3 border-t border-slate-100 flex flex-col gap-2.5">
-              <button
-                onClick={() => {
+              <a
+                href="#contacto"
+                onClick={(e) => {
+                  e.preventDefault();
                   setMobileMenuOpen(false);
                   onOpenContact();
                 }}
@@ -177,7 +191,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
               >
                 <Calendar className="w-4 h-4" />
                 Agendar Consulta Inicial
-              </button>
+              </a>
 
               <a
                 href={whatsappUrl}

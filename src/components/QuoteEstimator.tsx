@@ -96,7 +96,11 @@ Objetivo: ${estimation.roiExpectation}`;
   };
 
   return (
-    <section id="cotizador" className="py-16 md:py-24 bg-white border-b border-slate-200">
+    <section 
+      id="cotizador" 
+      aria-label="Cotizador Interactivo y Diagnóstico Previo de Alcance"
+      className="py-16 md:py-24 bg-white border-b border-slate-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         {/* Section Header */}
@@ -207,7 +211,10 @@ Objetivo: ${estimation.roiExpectation}`;
           </div>
 
           {/* Projection Card Output - 5 cols */}
-          <div className="lg:col-span-5 bg-slate-900 text-white rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-xl space-y-6">
+          <article 
+            aria-label="Ruta de Acción y Plan Maestro Proyectado"
+            className="lg:col-span-5 bg-slate-900 text-white rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-xl space-y-6 lg:sticky lg:top-24"
+          >
             <div className="flex items-center justify-between pb-4 border-b border-slate-800">
               <div className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
                 <Target className="w-4 h-4" />
@@ -243,9 +250,18 @@ Objetivo: ${estimation.roiExpectation}`;
 
             {/* Methodological Phases */}
             <div className="space-y-2.5">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
-                Fases de Trabajo Propuestas:
-              </span>
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+                  Fases de Trabajo Propuestas:
+                </span>
+                <a 
+                  href="#metodologia" 
+                  className="text-xs text-emerald-400 hover:text-emerald-300 underline"
+                  title="Ver explicación completa de la metodología"
+                >
+                  Ver metodología
+                </a>
+              </div>
               {estimation.phases.map((phase, idx) => (
                 <div key={idx} className="flex items-start gap-2 text-xs text-slate-300">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
@@ -273,7 +289,7 @@ Objetivo: ${estimation.roiExpectation}`;
               </button>
             </div>
 
-          </div>
+          </article>
 
         </div>
 

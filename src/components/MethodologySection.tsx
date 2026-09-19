@@ -66,7 +66,11 @@ export const MethodologySection: React.FC<MethodologySectionProps> = ({ onOpenCo
   ];
 
   return (
-    <section id="metodologia" className="py-16 md:py-24 bg-white border-b border-slate-200">
+    <section 
+      id="metodologia" 
+      aria-label="Metodología de Trabajo en Consultoría Agroindustrial"
+      className="py-16 md:py-24 bg-white border-b border-slate-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         {/* Header */}
@@ -82,13 +86,15 @@ export const MethodologySection: React.FC<MethodologySectionProps> = ({ onOpenCo
           </p>
         </div>
 
-        {/* Steps Grid */}
+        {/* Steps Grid with semantic articles */}
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {steps.map((step, idx) => {
             const Icon = step.icon;
             return (
-              <div 
+              <article 
                 key={idx}
+                id={`fase-${step.number}`}
+                aria-label={`Fase ${step.number}: ${step.title} - ${step.subtitle}`}
                 className="bg-slate-50/90 rounded-2xl p-6 border border-slate-200 hover:border-emerald-300 hover:bg-white hover:shadow-md transition-all duration-200 flex flex-col justify-between relative group"
               >
                 <div>
@@ -120,35 +126,56 @@ export const MethodologySection: React.FC<MethodologySectionProps> = ({ onOpenCo
                     ))}
                   </div>
                 </div>
-              </div>
+
+                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                  <a 
+                    href="#servicios" 
+                    className="text-slate-500 hover:text-emerald-700 hover:underline"
+                    title="Ver servicios aplicables"
+                  >
+                    Servicios vinculados
+                  </a>
+                  <a 
+                    href="#contacto" 
+                    className="font-semibold text-emerald-700 hover:underline"
+                    title="Consultar por esta etapa"
+                  >
+                    Iniciar consulta &rarr;
+                  </a>
+                </div>
+              </article>
             );
           })}
         </div>
 
-        {/* Reassurance Banner */}
+        {/* Reassurance Banner with semantic markup & internal link */}
         <div className="mt-12 bg-slate-900 text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800">
           <div className="flex items-start gap-4">
             <div className="p-2.5 rounded-xl bg-emerald-500/20 text-emerald-400 shrink-0 mt-1">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="font-bold text-base sm:text-lg text-white mb-1">
+              <h3 className="font-bold text-base sm:text-lg text-white mb-1">
                 ¿Por dónde empezamos? Por una primera conversación exploratoria
-              </h4>
+              </h3>
               <p className="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
                 No necesita tener pliegos técnicos ni términos de referencia listos. En la consulta inicial escuchamos su necesidad, revisamos la viabilidad y le indicamos honestamente si y cómo podemos apoyarle.
               </p>
             </div>
           </div>
 
-          <button
-            onClick={onOpenContact}
+          <a
+            href="#contacto"
+            onClick={(e) => {
+              e.preventDefault();
+              onOpenContact();
+            }}
             className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-slate-900 bg-emerald-400 hover:bg-emerald-300 active:bg-emerald-200 transition-colors shadow-sm cursor-pointer"
           >
             <CalendarCheck className="w-4 h-4" />
             <span>Agendar Consulta Inicial</span>
             <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+          </a>
         </div>
 
       </div>

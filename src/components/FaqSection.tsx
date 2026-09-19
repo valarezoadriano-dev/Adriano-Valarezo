@@ -10,7 +10,11 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-16 md:py-20 bg-slate-50 border-b border-slate-200">
+    <section 
+      id="faq" 
+      aria-label="Preguntas Frecuentes sobre la Consultoría"
+      className="py-16 md:py-20 bg-slate-50 border-b border-slate-200"
+    >
       <div className="max-w-4xl mx-auto px-4 sm:px-8">
         
         {/* Header */}
@@ -27,21 +31,23 @@ export const FaqSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Accordion list */}
+        {/* Accordion list with semantic articles */}
         <div className="space-y-3">
           {QUICK_FAQS.map((faq, idx) => {
             const isOpen = openIndex === idx;
 
             return (
-              <div
+              <article
                 key={idx}
+                id={`faq-${idx}`}
+                aria-label={faq.q}
                 className="bg-white rounded-xl border border-slate-200 overflow-hidden transition-all shadow-2xs"
               >
                 <button
                   onClick={() => toggleFaq(idx)}
                   className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 text-sm sm:text-base hover:text-emerald-700 transition-colors cursor-pointer"
                 >
-                  <span>{faq.q}</span>
+                  <span className="font-semibold text-slate-900">{faq.q}</span>
                   <div className="p-1 rounded-md bg-slate-100 text-slate-500 shrink-0">
                     {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                   </div>
@@ -49,12 +55,24 @@ export const FaqSection: React.FC = () => {
 
                 {isOpen && (
                   <div className="px-5 pb-5 pt-1 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100 animate-in fade-in duration-150">
-                    {faq.a}
+                    <p>{faq.a}</p>
                   </div>
                 )}
-              </div>
+              </article>
             );
           })}
+        </div>
+
+        {/* Bottom Internal Quick Help Link */}
+        <div className="mt-8 text-center text-xs sm:text-sm text-slate-500 bg-white p-4 rounded-xl border border-slate-200">
+          ¿Tiene un requerimiento o situación operativa particular?{' '}
+          <a href="#contacto" className="text-emerald-700 font-bold hover:underline">
+            Escriba su consulta técnica directa
+          </a>{' '}
+          o{' '}
+          <a href="#cotizador" className="text-emerald-700 font-bold hover:underline">
+            estime los honorarios en el cotizador
+          </a>.
         </div>
 
       </div>
