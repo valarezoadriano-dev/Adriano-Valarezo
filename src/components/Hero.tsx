@@ -8,10 +8,12 @@ import {
   TrendingUp,
   FileCheck2,
   CalendarCheck,
-  Building2
+  Building2,
+  Shapes
 } from 'lucide-react';
 import { ADRIANO_PROFILE } from '../data/content';
 import adrianoPhoto from '../assets/adriano-valarezo.jpg';
+import { BrandSymbol } from './BrandLogo';
 
 interface HeroProps {
   onOpenContact: () => void;
@@ -109,11 +111,19 @@ export const Hero: React.FC<HeroProps> = ({
               {/* Profile Card Header */}
               <div className="flex items-start justify-between pb-6 border-b border-slate-800">
                 <div className="flex items-center gap-3.5">
-                  <img
-                    src={adrianoPhoto}
-                    alt="Adriano Remigio Valarezo"
-                    className="w-14 h-14 rounded-xl object-cover shadow-md border border-emerald-400/30"
-                  />
+                  <div className="relative shrink-0">
+                    <img
+                      src={adrianoPhoto}
+                      alt="Adriano Remigio Valarezo"
+                      className="w-14 h-14 rounded-xl object-cover shadow-md border border-emerald-400/30"
+                    />
+                    <div 
+                      className="absolute -bottom-1 -right-1 w-6 h-6 rounded-md bg-slate-950 border border-emerald-400/40 p-0.5 flex items-center justify-center shadow-xs"
+                      title="Símbolo Oficial: Triángulo Delta & Brote Agroindustrial"
+                    >
+                      <BrandSymbol sizeClass="w-4 h-4" variant="emerald" />
+                    </div>
+                  </div>
                   <div>
                     <h2 className="text-lg font-bold text-white leading-tight">
                       Adriano Remigio Valarezo

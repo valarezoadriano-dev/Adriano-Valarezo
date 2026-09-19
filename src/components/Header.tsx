@@ -6,15 +6,18 @@ import {
   Phone,
   Calendar,
   CheckCircle2,
-  MessageSquare
+  MessageSquare,
+  Palette
 } from 'lucide-react';
 import { ADRIANO_PROFILE } from '../data/content';
+import { BrandSymbol } from './BrandLogo';
 
 interface HeaderProps {
   onOpenContact: (prefilledService?: string) => void;
+  onOpenBrandKit?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenBrandKit }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -33,12 +36,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
     { name: 'Casos', href: '#portafolio' },
     { name: 'Testimonios', href: '#testimonios' },
     { name: 'Trayectoria', href: '#sobre-mi' },
+    { name: 'Kit de Marca', href: '#identidad-marca', isBrandKit: true },
     { name: 'Preguntas', href: '#faq' },
   ];
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (link: { name: string; href: string; isBrandKit?: boolean }) => {
     setMobileMenuOpen(false);
-    const element = document.querySelector(href);
+    if (link.isBrandKit && onOpenBrandKit) {
+      onOpenBrandKit();
+      return;
+    }
+    const element = document.querySelector(link.href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -102,8 +110,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
           {/* Brand logo & identity */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-800 text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
-              AV
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center p-1 shadow-2xs group-hover:bg-emerald-100 transition-colors">
+              <BrandSymbol sizeClass="w-7 h-7" variant="emerald" />
             </div>
             <div>
               <div className="font-display font-extrabold text-slate-900 text-lg leading-tight tracking-tight flex items-center gap-1.5">
@@ -117,14 +125,19 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <button
                 key={link.name}
-                onClick={() => handleNavClick(link.href)}
-                className="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors cursor-pointer"
+                onClick={() => handleNavClick(link)}
+                className={`text-sm font-semibold transition-colors cursor-pointer flex items-center gap-1.5 ${
+                  link.isBrandKit
+                    ? 'text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/80 hover:bg-emerald-100/70'
+                    : 'text-slate-600 hover:text-emerald-600'
+                }`}
               >
-                {link.name}
+                {link.isBrandKit && <Palette className="w-3.5 h-3.5 text-emerald-600" />}
+                <span>{link.name}</span>
               </button>
             ))}
           </nav>
@@ -158,10 +171,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
               {navLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => handleNavClick(link.href)}
-                  className="text-left px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-colors cursor-pointer"
+                  onClick={() => handleNavClick(link)}
+                  className={`text-left px-3 py-2 text-sm font-semibold rounded-lg transition-colors cursor-pointer flex items-center justify-between ${
+                    link.isBrandKit
+                      ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                      : 'text-slate-700 hover:bg-emerald-50 hover:text-emerald-700'
+                  }`}
                 >
-                  {link.name}
+                  <span>{link.name}</span>
+                  {link.isBrandKit && <Palette className="w-4 h-4 text-emerald-600" />}
                 </button>
               ))}
             </div>

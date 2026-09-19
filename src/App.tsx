@@ -7,14 +7,17 @@ import { QuoteEstimator } from './components/QuoteEstimator';
 import { PortfolioSection } from './components/PortfolioSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { AboutSection } from './components/AboutSection';
+import { BrandIdentitySection } from './components/BrandIdentitySection';
 import { QuickContactSection } from './components/QuickContactSection';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
+import { BrandKitModal } from './components/BrandKitModal';
 
 export default function App() {
   const [prefilledService, setPrefilledService] = useState<string>('');
   const [prefilledMessage, setPrefilledMessage] = useState<string>('');
+  const [isBrandKitOpen, setIsBrandKitOpen] = useState<boolean>(false);
 
   const scrollToContact = (serviceTitle?: string, message?: string) => {
     if (serviceTitle) setPrefilledService(serviceTitle);
@@ -40,6 +43,7 @@ export default function App() {
       {/* Sticky Header with navigation & WhatsApp shortcut */}
       <Header
         onOpenContact={() => scrollToContact()}
+        onOpenBrandKit={() => setIsBrandKitOpen(true)}
       />
 
       <main className="flex-grow">
@@ -77,6 +81,11 @@ export default function App() {
           onOpenContact={() => scrollToContact()}
         />
 
+        {/* Corporate Brand Identity & Visual System Section */}
+        <BrandIdentitySection 
+          onOpenBrandKit={() => setIsBrandKitOpen(true)}
+        />
+
         {/* Quick Contact Section (prominently requested by user) */}
         <QuickContactSection 
           initialService={prefilledService}
@@ -88,11 +97,19 @@ export default function App() {
       </main>
 
       {/* Corporate Footer */}
-      <Footer />
+      <Footer 
+        onOpenBrandKit={() => setIsBrandKitOpen(true)}
+      />
 
       {/* Quick Floating WhatsApp button */}
       <FloatingActions 
         onOpenContact={() => scrollToContact()}
+      />
+
+      {/* Corporate Brand Kit & Guidelines Modal */}
+      <BrandKitModal 
+        isOpen={isBrandKitOpen}
+        onClose={() => setIsBrandKitOpen(false)}
       />
     </div>
   );

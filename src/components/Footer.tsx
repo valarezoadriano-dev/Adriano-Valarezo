@@ -2,16 +2,22 @@ import React from 'react';
 import { 
   ArrowUp, 
   Mail, 
-  Phone,
+  Phone, 
   MessageSquare, 
   MapPin, 
   Award, 
   ShieldCheck,
-  CheckCircle2
+  CheckCircle2,
+  Palette
 } from 'lucide-react';
 import { ADRIANO_PROFILE } from '../data/content';
+import { BrandSymbol } from './BrandLogo';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenBrandKit?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -30,8 +36,8 @@ export const Footer: React.FC = () => {
           {/* Brand & Credentials - 5 cols */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-                AV
+              <div className="w-10 h-10 rounded-xl bg-emerald-950 border border-emerald-800/80 p-1 flex items-center justify-center shadow-sm">
+                <BrandSymbol sizeClass="w-7 h-7" variant="emerald" />
               </div>
               <div>
                 <h3 className="font-display font-extrabold text-white text-base leading-tight">
@@ -58,6 +64,18 @@ export const Footer: React.FC = () => {
                 América Latina
               </span>
             </div>
+
+            {onOpenBrandKit && (
+              <div className="pt-2">
+                <button
+                  onClick={onOpenBrandKit}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-[11px] font-bold text-emerald-400 bg-emerald-950/40 border border-emerald-800/50 hover:bg-emerald-900/50 transition-colors cursor-pointer"
+                >
+                  <Palette className="w-3.5 h-3.5" />
+                  <span>Manual & Kit de Marca Oficial</span>
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Navigation Links - 3 cols */}
@@ -69,6 +87,11 @@ export const Footer: React.FC = () => {
               <li>
                 <a href="#servicios" className="hover:text-emerald-400 transition-colors">
                   Servicios Profesionales
+                </a>
+              </li>
+              <li>
+                <a href="#metodologia" className="hover:text-emerald-400 transition-colors">
+                  Metodología de Intervención
                 </a>
               </li>
               <li>
@@ -89,6 +112,12 @@ export const Footer: React.FC = () => {
               <li>
                 <a href="#sobre-mi" className="hover:text-emerald-400 transition-colors">
                   Sobre Adriano Remigio Valarezo
+                </a>
+              </li>
+              <li>
+                <a href="#identidad-marca" className="hover:text-emerald-400 transition-colors flex items-center gap-1.5 text-emerald-400">
+                  <Palette className="w-3 h-3" />
+                  <span>Kit de Marca & Identidad</span>
                 </a>
               </li>
               <li>
