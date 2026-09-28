@@ -7,11 +7,18 @@ import {
   Globe2, 
   Briefcase, 
   FileCheck, 
-  Shield,
-  ArrowRight
+  Shield, 
+  ArrowRight,
+  Video
 } from 'lucide-react';
 import { ADRIANO_PROFILE, CREDENTIALS_LIST } from '../data/content';
 import adrianoPhoto from '../assets/adriano-valarezo.jpg';
+import { 
+  LinkedInIcon, 
+  InstagramIcon, 
+  FacebookIcon, 
+  XTwitterIcon 
+} from './SocialIcons';
 
 interface AboutSectionProps {
   onOpenContact: () => void;
@@ -68,8 +75,57 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenContact }) => 
                 </div>
               </div>
 
+              {/* Social Channels Row */}
+              <div className="pt-5 mt-5 border-t border-slate-100">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2.5">
+                  Redes Sociales Oficiales
+                </span>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={ADRIANO_PROFILE.socialLinks.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl bg-slate-100 hover:bg-[#0A66C2]/10 text-slate-600 hover:text-[#0A66C2] transition-colors"
+                    title="LinkedIn de Adriano Valarezo"
+                    aria-label="LinkedIn"
+                  >
+                    <LinkedInIcon className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={ADRIANO_PROFILE.socialLinks.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl bg-slate-100 hover:bg-pink-50 text-slate-600 hover:text-pink-600 transition-colors"
+                    title="Instagram de Adriano Valarezo"
+                    aria-label="Instagram"
+                  >
+                    <InstagramIcon className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={ADRIANO_PROFILE.socialLinks.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl bg-slate-100 hover:bg-[#1877F2]/10 text-slate-600 hover:text-[#1877F2] transition-colors"
+                    title="Facebook de Adriano Valarezo"
+                    aria-label="Facebook"
+                  >
+                    <FacebookIcon className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={ADRIANO_PROFILE.socialLinks.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl bg-slate-100 hover:bg-slate-900 hover:text-white text-slate-600 transition-colors"
+                    title="X (Twitter) de Adriano Valarezo"
+                    aria-label="X (Twitter)"
+                  >
+                    <XTwitterIcon className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+
               {/* Direct Action with Internal Anchor for Search Crawlers */}
-              <div className="mt-8 pt-6 border-t border-slate-100">
+              <div className="mt-6 pt-5 border-t border-slate-100 space-y-2">
                 <a
                   href="#contacto"
                   onClick={(e) => {
@@ -80,6 +136,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenContact }) => 
                 >
                   <span>Agendar Consulta Directa</span>
                   <ArrowRight className="w-4 h-4" />
+                </a>
+
+                <a
+                  href="#videos"
+                  className="w-full py-2.5 px-4 rounded-xl font-semibold text-xs text-emerald-800 bg-emerald-50 hover:bg-emerald-100 transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <Video className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Ver Videos en Plantas y Foros</span>
                 </a>
               </div>
             </article>

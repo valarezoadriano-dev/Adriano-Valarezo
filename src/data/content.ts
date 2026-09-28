@@ -1,4 +1,4 @@
-import { ServiceItem, PortfolioProject, Testimonial } from '../types';
+import { ServiceItem, PortfolioProject, Testimonial, FeaturedVideo, SocialLinks } from '../types';
 
 export const ADRIANO_PROFILE = {
   name: "Adriano Remigio Valarezo",
@@ -12,8 +12,59 @@ export const ADRIANO_PROFILE = {
   whatsappNumber: "593991286621", // international format
   location: "Ecuador (Cobertura Nacional: Quito, Guayaquil y Provincias) · Proyectos en LATAM",
   summary: "Consultoría especializada para empresas, proyectos y organizaciones en Ecuador. Más de 22 años de experiencia aportando criterio técnico y estratégico en agroindustria, gestión de proyectos, sostenibilidad y desarrollo empresarial.",
-  bio: "Graduado de la prestigiosa Escuela Agrícola Panamericana Zamorano como Ingeniero en Agroindustria, Adriano Remigio Valarezo cuenta con más de 22 años de experiencia profesional liderando proyectos, gerencia corporativa de empresas, consultorías socioeconómicas internacionales (Ecuador, Honduras, Centroamérica) y asesoramiento a directorios. Apoya a empresas, inversionistas e instituciones a estructurar proyectos, mejorar su gestión, evaluar oportunidades y tomar decisiones con sólido respaldo técnico."
+  bio: "Graduado de la prestigiosa Escuela Agrícola Panamericana Zamorano como Ingeniero en Agroindustria, Adriano Remigio Valarezo cuenta con más de 22 años de experiencia profesional liderando proyectos, gerencia corporativa de empresas, consultorías socioeconómicas internacionales (Ecuador, Honduras, Centroamérica) y asesoramiento a directorios. Apoya a empresas, inversionistas e instituciones a estructurar proyectos, mejorar su gestión, evaluar oportunidades y tomar decisiones con sólido respaldo técnico.",
+  socialLinks: {
+    facebook: "https://www.facebook.com/adrianovalarezo",
+    instagram: "https://www.instagram.com/adrianovalarezo/",
+    linkedin: "https://www.linkedin.com/in/adriano-valarezo/",
+    twitter: "https://x.com/adrinaovalarezo",
+  } as SocialLinks
 };
+
+export const FEATURED_VIDEOS: FeaturedVideo[] = [
+  {
+    id: "world-engineering-day-2025",
+    title: "World Engineering Day 2025 | Cervecería Nacional Ecuador",
+    subtitle: "Ingeniería de Procesos, Producción Industrial y Estándares Agroalimentarios",
+    space: "Planta Industrial & Procesos de Manufactura",
+    institution: "Cervecería Nacional Ecuador · SJH Studios",
+    roleHighlighted: "Ingeniería en Planta, Gestión Técnica y Operaciones",
+    platform: "vimeo",
+    videoUrl: "https://vimeo.com/1060946974/dc12bd915f?fl=pl&fe=sh",
+    embedUrl: "https://player.vimeo.com/video/1060946974?h=dc12bd915f&title=0&byline=0&portrait=0",
+    description: "Registro audiovisual conmemorativo del Día Mundial de la Ingeniería 2025 grabado en las instalaciones de Cervecería Nacional Ecuador. Se aprecia a Adriano Remigio Valarezo en su espacio operativo de planta, evidenciando el rigor en los estándares de manufactura, optimización de líneas de producción continua, balance de procesos y compromiso con la inocuidad y la sostenibilidad industrial.",
+    duration: "4:53 min",
+    year: "2025",
+    keyTopics: [
+      "Ingeniería de Procesos",
+      "Manufactura a Gran Escala",
+      "Inocuidad & Calidad",
+      "Buenas Prácticas Industriales",
+      "World Engineering Day"
+    ]
+  },
+  {
+    id: "chela-cientifica-comida-del-futuro",
+    title: "Chela Científica: La comida del futuro ¿Hasta dónde vamos a llegar?",
+    subtitle: "Debate Académico y Divulgación Científica sobre Innovación Agroalimentaria",
+    space: "Foro de Ciencia y Tecnología · Escuela Superior Politécnica del Litoral",
+    institution: "Escuela Superior Politécnica del Litoral (ESPOL)",
+    roleHighlighted: "Panelista Experto en Agroindustria y Sostenibilidad Alimentaria",
+    platform: "youtube",
+    videoUrl: "https://youtu.be/czFRAorUZU8",
+    embedUrl: "https://www.youtube-nocookie.com/embed/czFRAorUZU8",
+    description: "Encuentro de divulgación y análisis científico organizado por la ESPOL con la participación del Ing. Adriano Remigio Valarezo. En este espacio se debaten los horizontes de la producción alimentaria global, biotecnología aplicada a alimentos, retos climáticos en la cadena de suministro y el balance indispensable entre eficiencia productiva, seguridad alimentaria y sostenibilidad territorial.",
+    duration: "1h 15m",
+    year: "2024 - 2025",
+    keyTopics: [
+      "Alimentación del Futuro",
+      "Biotecnología & Alimentos",
+      "Sostenibilidad Territorial",
+      "Seguridad Alimentaria",
+      "Divulgación Científica ESPOL"
+    ]
+  }
+];
 
 export const SERVICES_LIST: ServiceItem[] = [
   {

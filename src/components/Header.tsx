@@ -6,10 +6,17 @@ import {
   Phone,
   Calendar,
   CheckCircle2,
-  MessageSquare
+  MessageSquare,
+  Video
 } from 'lucide-react';
 import { ADRIANO_PROFILE } from '../data/content';
 import { BrandSymbol } from './BrandLogo';
+import { 
+  LinkedInIcon, 
+  InstagramIcon, 
+  FacebookIcon, 
+  XTwitterIcon 
+} from './SocialIcons';
 
 interface HeaderProps {
   onOpenContact: (prefilledService?: string) => void;
@@ -32,6 +39,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
     { name: 'Metodología', href: '#metodologia' },
     { name: 'Diagnóstico', href: '#cotizador' },
     { name: 'Casos', href: '#portafolio' },
+    { name: 'Videos', href: '#videos' },
     { name: 'Testimonios', href: '#testimonios' },
     { name: 'Trayectoria', href: '#sobre-mi' },
     { name: 'Preguntas', href: '#faq' },
@@ -63,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             <span className="hidden md:inline text-slate-400">Consultoría en Ecuador, Centroamérica y LATAM</span>
           </div>
           
-          <div className="flex items-center gap-4 text-slate-300">
+          <div className="flex items-center gap-3 sm:gap-4 text-slate-300">
             <a 
               href={`tel:${ADRIANO_PROFILE.phone}`}
               className="hover:text-emerald-400 transition-colors hidden sm:flex items-center gap-1.5 font-medium"
@@ -74,11 +82,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             <span className="hidden sm:inline text-slate-600">|</span>
             <a 
               href={`mailto:${ADRIANO_PROFILE.email}`} 
-              className="hover:text-emerald-400 transition-colors flex items-center gap-1"
+              className="hover:text-emerald-400 transition-colors hidden md:flex items-center gap-1"
             >
               <span>{ADRIANO_PROFILE.email}</span>
             </a>
-            <span className="text-slate-600">|</span>
+            <span className="hidden md:inline text-slate-600">|</span>
             <a 
               href={whatsappUrl} 
               target="_blank" 
@@ -88,6 +96,52 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
               <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
               <span>WhatsApp</span>
             </a>
+
+            {/* Micro Social icons */}
+            <span className="text-slate-600">|</span>
+            <div className="flex items-center gap-2 text-slate-400">
+              <a
+                href={ADRIANO_PROFILE.socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn de Adriano Valarezo"
+                className="hover:text-[#0A66C2] transition-colors p-0.5"
+                title="LinkedIn"
+              >
+                <LinkedInIcon className="w-3.5 h-3.5" />
+              </a>
+              <a
+                href={ADRIANO_PROFILE.socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram de Adriano Valarezo"
+                className="hover:text-pink-400 transition-colors p-0.5"
+                title="Instagram"
+              >
+                <InstagramIcon className="w-3.5 h-3.5" />
+              </a>
+              <a
+                href={ADRIANO_PROFILE.socialLinks.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook de Adriano Valarezo"
+                className="hover:text-blue-400 transition-colors p-0.5"
+                title="Facebook"
+              >
+                <FacebookIcon className="w-3.5 h-3.5" />
+              </a>
+              <a
+                href={ADRIANO_PROFILE.socialLinks.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (Twitter) de Adriano Valarezo"
+                className="hover:text-white transition-colors p-0.5"
+                title="X (Twitter)"
+              >
+                <XTwitterIcon className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -202,6 +256,50 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 <MessageSquare className="w-4 h-4 text-emerald-600" />
                 Hablar por WhatsApp
               </a>
+
+              {/* Mobile Social Links */}
+              <div className="pt-2 flex items-center justify-around text-slate-600 border-t border-slate-100">
+                <a
+                  href={ADRIANO_PROFILE.socialLinks.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 p-2 rounded-lg hover:bg-slate-100 text-xs font-semibold text-slate-700"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedInIcon className="w-4 h-4 text-[#0A66C2]" />
+                  <span>LinkedIn</span>
+                </a>
+                <a
+                  href={ADRIANO_PROFILE.socialLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 p-2 rounded-lg hover:bg-slate-100 text-xs font-semibold text-slate-700"
+                  aria-label="Instagram"
+                >
+                  <InstagramIcon className="w-4 h-4 text-pink-600" />
+                  <span>Instagram</span>
+                </a>
+                <a
+                  href={ADRIANO_PROFILE.socialLinks.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 p-2 rounded-lg hover:bg-slate-100 text-xs font-semibold text-slate-700"
+                  aria-label="Facebook"
+                >
+                  <FacebookIcon className="w-4 h-4 text-[#1877F2]" />
+                  <span>Facebook</span>
+                </a>
+                <a
+                  href={ADRIANO_PROFILE.socialLinks.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 p-2 rounded-lg hover:bg-slate-100 text-xs font-semibold text-slate-700"
+                  aria-label="X (Twitter)"
+                >
+                  <XTwitterIcon className="w-4 h-4 text-slate-900" />
+                  <span>X</span>
+                </a>
+              </div>
             </div>
           </div>
         )}

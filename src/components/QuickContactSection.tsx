@@ -14,6 +14,12 @@ import {
 } from 'lucide-react';
 import { ADRIANO_PROFILE, SERVICES_LIST } from '../data/content';
 import { ContactFormData } from '../types';
+import { 
+  LinkedInIcon, 
+  InstagramIcon, 
+  FacebookIcon, 
+  XTwitterIcon 
+} from './SocialIcons';
 
 // Public access key from web3forms.com — safe to expose client-side by design.
 const WEB3FORMS_ACCESS_KEY = '09edc312-a436-4f66-9a22-e0b8f30bead6';
@@ -221,6 +227,60 @@ export const QuickContactSection: React.FC<QuickContactSectionProps> = ({
             </div>
           </article>
 
+        </div>
+
+        {/* Quick Social Channels Bar */}
+        <div className="bg-slate-50 border border-slate-200/90 rounded-2xl p-4 sm:p-5 mb-10 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <span className="text-xs font-bold text-slate-900 block">
+              ¿Prefiere contactar o seguir a Adriano por redes profesionales?
+            </span>
+            <span className="text-xs text-slate-500">
+              Perfiles oficiales actualizados para networking, consultas y casos de campo.
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <a
+              href={ADRIANO_PROFILE.socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-[#0A66C2]/40 hover:text-[#0A66C2] text-xs font-semibold text-slate-700 transition-colors shadow-2xs"
+            >
+              <LinkedInIcon className="w-3.5 h-3.5 text-[#0A66C2]" />
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href={ADRIANO_PROFILE.socialLinks.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-pink-400 hover:text-pink-600 text-xs font-semibold text-slate-700 transition-colors shadow-2xs"
+            >
+              <InstagramIcon className="w-3.5 h-3.5 text-pink-600" />
+              <span>Instagram</span>
+            </a>
+
+            <a
+              href={ADRIANO_PROFILE.socialLinks.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-[#1877F2]/40 hover:text-[#1877F2] text-xs font-semibold text-slate-700 transition-colors shadow-2xs"
+            >
+              <FacebookIcon className="w-3.5 h-3.5 text-[#1877F2]" />
+              <span>Facebook</span>
+            </a>
+
+            <a
+              href={ADRIANO_PROFILE.socialLinks.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-slate-800 hover:text-slate-900 text-xs font-semibold text-slate-700 transition-colors shadow-2xs"
+            >
+              <XTwitterIcon className="w-3.5 h-3.5 text-slate-900" />
+              <span>X</span>
+            </a>
+          </div>
         </div>
 
         {/* Main Fast Contact Form Card */}

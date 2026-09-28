@@ -5,6 +5,7 @@ import { ServicesSection } from './components/ServicesSection';
 import { MethodologySection } from './components/MethodologySection';
 import { QuoteEstimator } from './components/QuoteEstimator';
 import { PortfolioSection } from './components/PortfolioSection';
+import { WorkSpacesAndMediaSection } from './components/WorkSpacesAndMediaSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { AboutSection } from './components/AboutSection';
 import { QuickContactSection } from './components/QuickContactSection';
@@ -82,6 +83,11 @@ export default function App() {
         {/* Featured Portfolio & Case Studies */}
         <PortfolioSection 
           onSelectProjectForInquiry={(inquiryTitle) => scrollToContact(inquiryTitle)}
+        />
+
+        {/* Real-World Work Spaces & Audiovisual Media (Vimeo & YouTube) + Social Media Hub */}
+        <WorkSpacesAndMediaSection 
+          onOpenContact={() => scrollToContact()}
         />
 
         {/* Testimonials & Directorial Endorsements */}

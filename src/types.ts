@@ -68,6 +68,29 @@ export interface ContactFormData {
   meetingPreference: 'virtual' | 'presencial' | 'telefonica';
 }
 
+export interface SocialLinks {
+  linkedin: string;
+  instagram: string;
+  facebook: string;
+  twitter: string; // X profile
+}
+
+export interface FeaturedVideo {
+  id: string;
+  title: string;
+  subtitle: string;
+  space: string;
+  institution: string;
+  roleHighlighted: string;
+  platform: 'vimeo' | 'youtube';
+  videoUrl: string;
+  embedUrl: string;
+  description: string;
+  duration?: string;
+  year: string;
+  keyTopics: string[];
+}
+
 export interface AiDiagnosticResult {
   summary: string;
   recommendedService: string;
