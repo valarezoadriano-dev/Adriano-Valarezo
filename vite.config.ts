@@ -2,6 +2,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
+import {viteSitemapPlugin} from './scripts/vite-sitemap-plugin';
 
 export default defineConfig(({mode}) => {
   return {
@@ -11,7 +12,13 @@ export default defineConfig(({mode}) => {
     // base as `vite build`; only the dev server (`vite`, mode 'development')
     // keeps the root path.
     base: mode === 'production' ? '/Adriano-Valarezo/' : '/',
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      viteSitemapPlugin({
+        baseUrl: 'https://valarezoadriano.github.io/Adriano-Valarezo/'
+      })
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

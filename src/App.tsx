@@ -19,7 +19,7 @@ export default function App() {
   const [prefilledMessage, setPrefilledMessage] = useState<string>('');
   const [isBrandKitOpen, setIsBrandKitOpen] = useState<boolean>(false);
 
-  // Check URL parameters for private brand kit access (e.g., ?kit=privado, ?brand=private, #kit-privado)
+  // Check URL parameters for private brand kit access, service routes, and section anchors
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
@@ -28,6 +28,39 @@ export default function App() {
       
       if (isKitParam || isKitHash) {
         setIsBrandKitOpen(true);
+        return;
+      }
+
+      // Handle service parameter (e.g., ?servicio=consultoria-agroindustrial)
+      const serviceParam = params.get('servicio');
+      if (serviceParam) {
+        const serviceMap: Record<string, string> = {
+          'consultoria-agroindustrial': 'Agroindustria y Cadenas de Valor',
+          'gestion-proyectos-pmo': 'Gestión y Dirección de Proyectos',
+          'sostenibilidad-desarrollo': 'Sostenibilidad y Desarrollo Territorial',
+          'asesoria-estrategica': 'Asesoría Estratégica y Dictámenes Técnicos'
+        };
+        const serviceTitle = serviceMap[serviceParam] || serviceParam;
+        setPrefilledService(serviceTitle);
+
+        setTimeout(() => {
+          const targetEl = document.getElementById(serviceParam) || document.getElementById('servicios');
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 150);
+        return;
+      }
+
+      // Handle section parameter (e.g., ?seccion=videos, ?seccion=servicios)
+      const seccionParam = params.get('seccion');
+      if (seccionParam) {
+        setTimeout(() => {
+          const targetEl = document.getElementById(seccionParam);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 150);
       }
     }
   }, []);
