@@ -142,6 +142,53 @@ export function generateSitemapXml(baseUrl: string = 'https://valarezoadriano.gi
       path: '?seccion=contacto',
       changefreq: 'monthly',
       priority: '0.9'
+    },
+
+    // 4. Secciones directas con ancla solicitadas para exportación GitHub
+    {
+      path: '#servicios',
+      changefreq: 'monthly',
+      priority: '0.9'
+    },
+    {
+      path: '#portafolio',
+      changefreq: 'monthly',
+      priority: '0.8'
+    },
+    {
+      path: '#videos',
+      changefreq: 'weekly',
+      priority: '0.85'
+    },
+    {
+      path: '#sobre-mi',
+      changefreq: 'monthly',
+      priority: '0.8'
+    },
+    {
+      path: '#contacto',
+      changefreq: 'monthly',
+      priority: '0.9'
+    },
+    {
+      path: '#metodologia',
+      changefreq: 'monthly',
+      priority: '0.8'
+    },
+    {
+      path: '#testimonios',
+      changefreq: 'monthly',
+      priority: '0.75'
+    },
+    {
+      path: '#cotizador',
+      changefreq: 'monthly',
+      priority: '0.75'
+    },
+    {
+      path: '#faq',
+      changefreq: 'monthly',
+      priority: '0.7'
     }
   ];
 
