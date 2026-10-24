@@ -27,11 +27,13 @@ const WEB3FORMS_ACCESS_KEY = '09edc312-a436-4f66-9a22-e0b8f30bead6';
 interface QuickContactSectionProps {
   initialService?: string;
   initialMessage?: string;
+  onOpenSecurity?: () => void;
 }
 
 export const QuickContactSection: React.FC<QuickContactSectionProps> = ({
   initialService = '',
-  initialMessage = ''
+  initialMessage = '',
+  onOpenSecurity
 }) => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
@@ -487,9 +489,20 @@ export const QuickContactSection: React.FC<QuickContactSectionProps> = ({
 
               {/* Form submit & secondary triggers */}
               <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="flex items-center gap-2 text-xs text-slate-500">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Información protegida bajo estricta confidencialidad.</span>
+                <div className="flex items-start sm:items-center gap-2 text-xs text-slate-500">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5 sm:mt-0" />
+                  <span>
+                    Información protegida bajo estricta confidencialidad y secreto profesional.{' '}
+                    {onOpenSecurity && (
+                      <button
+                        type="button"
+                        onClick={onOpenSecurity}
+                        className="text-emerald-700 font-semibold underline hover:text-emerald-800 cursor-pointer"
+                      >
+                        Ver Centro de Seguridad & LOPDP
+                      </button>
+                    )}
+                  </span>
                 </div>
 
                 <div className="flex items-center gap-3 w-full sm:w-auto">

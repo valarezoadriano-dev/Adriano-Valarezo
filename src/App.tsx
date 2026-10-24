@@ -13,13 +13,15 @@ import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
 import { BrandKitModal } from './components/BrandKitModal';
+import { SecurityCenterModal } from './components/SecurityCenterModal';
 
 export default function App() {
   const [prefilledService, setPrefilledService] = useState<string>('');
   const [prefilledMessage, setPrefilledMessage] = useState<string>('');
   const [isBrandKitOpen, setIsBrandKitOpen] = useState<boolean>(false);
+  const [isSecurityModalOpen, setIsSecurityModalOpen] = useState<boolean>(false);
 
-  // Check URL parameters for private brand kit access, service routes, and section anchors
+  // Check URL parameters for private brand kit access, security center, service routes, and section anchors
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
@@ -28,6 +30,13 @@ export default function App() {
       
       if (isKitParam || isKitHash) {
         setIsBrandKitOpen(true);
+        return;
+      }
+
+      const isSecurityParam = params.get('seguridad') === 'lopdp' || params.get('privacidad') === 'true' || params.get('security') === 'true';
+      const isSecurityHash = window.location.hash === '#seguridad' || window.location.hash === '#privacidad' || window.location.hash === '#lopdp';
+      if (isSecurityParam || isSecurityHash) {
+        setIsSecurityModalOpen(true);
         return;
       }
 
@@ -135,15 +144,17 @@ export default function App() {
         <QuickContactSection 
           initialService={prefilledService}
           initialMessage={prefilledMessage}
+          onOpenSecurity={() => setIsSecurityModalOpen(true)}
         />
 
         {/* FAQ Section */}
         <FaqSection />
       </main>
 
-      {/* Corporate Footer with discreet private access trigger in bottom bar */}
+      {/* Corporate Footer with discreet private access trigger & security policy in bottom bar */}
       <Footer 
         onOpenBrandKit={() => setIsBrandKitOpen(true)}
+        onOpenSecurity={() => setIsSecurityModalOpen(true)}
       />
 
       {/* Quick Floating WhatsApp button */}
@@ -155,6 +166,12 @@ export default function App() {
       <BrandKitModal 
         isOpen={isBrandKitOpen}
         onClose={() => setIsBrandKitOpen(false)}
+      />
+
+      {/* Continuous Data Security, Privacy & LOPDP Governance Center */}
+      <SecurityCenterModal
+        isOpen={isSecurityModalOpen}
+        onClose={() => setIsSecurityModalOpen(false)}
       />
     </div>
   );

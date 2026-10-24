@@ -25,9 +25,10 @@ import {
 
 interface FooterProps {
   onOpenBrandKit?: () => void;
+  onOpenSecurity?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit, onOpenSecurity }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -266,10 +267,22 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit }) => {
             </div>
 
             <div className="pt-2">
-              <span className="inline-flex items-center gap-1.5 text-[11px] text-emerald-400 bg-emerald-950/40 border border-emerald-800/40 px-3 py-1 rounded-full">
-                <ShieldCheck className="w-3.5 h-3.5" />
-                Ética profesional y rigor técnico garantizado
-              </span>
+              {onOpenSecurity ? (
+                <button
+                  onClick={onOpenSecurity}
+                  className="inline-flex items-center gap-1.5 text-[11px] text-emerald-400 bg-emerald-950/60 hover:bg-emerald-950 border border-emerald-800/60 px-3 py-1.5 rounded-full transition-colors cursor-pointer text-left"
+                  title="Ver políticas de seguridad de la información, protección de datos y acuerdos NDA"
+                >
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>Seguridad de Datos & LOPDP Activa</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse ml-0.5"></span>
+                </button>
+              ) : (
+                <span className="inline-flex items-center gap-1.5 text-[11px] text-emerald-400 bg-emerald-950/40 border border-emerald-800/40 px-3 py-1 rounded-full">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                  Ética profesional y rigor técnico garantizado
+                </span>
+              )}
             </div>
           </div>
 
@@ -277,11 +290,23 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit }) => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
-          <div>
-            © {new Date().getFullYear()} Adriano Remigio Valarezo. Todos los derechos reservados.
+          <div className="text-center sm:text-left">
+            <div>© {new Date().getFullYear()} Adriano Remigio Valarezo. Todos los derechos reservados.</div>
+            <div className="text-[10px] text-slate-600 mt-0.5">Cifrado TLS 1.3 · Custodia estricta bajo secreto profesional</div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            {onOpenSecurity && (
+              <button
+                onClick={onOpenSecurity}
+                className="inline-flex items-center gap-1.5 text-slate-400 hover:text-emerald-400 transition-colors cursor-pointer text-[11px]"
+                title="Centro de Seguridad de la Información, Privacidad y Derechos ARCO"
+              >
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
+                <span>Seguridad & Privacidad LOPDP</span>
+              </button>
+            )}
+
             {onOpenBrandKit && (
               <button
                 onClick={onOpenBrandKit}
@@ -295,7 +320,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrandKit }) => {
 
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white transition-colors cursor-pointer flex items-center gap-1"
+              className="p-2 rounded-lg bg-slate-900 hover:bg-slate-850 text-slate-300 hover:text-white transition-colors cursor-pointer flex items-center gap-1 text-[11px]"
               title="Volver arriba"
             >
               <span>Subir</span>

@@ -189,6 +189,16 @@ export function generateSitemapXml(baseUrl: string = 'https://valarezoadriano.gi
       path: '#faq',
       changefreq: 'monthly',
       priority: '0.7'
+    },
+    {
+      path: '#seguridad',
+      changefreq: 'monthly',
+      priority: '0.75'
+    },
+    {
+      path: '?seccion=seguridad',
+      changefreq: 'monthly',
+      priority: '0.75'
     }
   ];
 
